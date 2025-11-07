@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natalizii Property Management - Gestione Affitti Brevi</title>
+  <meta name="description" content="Gestione completa affitti brevi per proprietari: SCIA, CIR, Alloggiati Web, pubblicazione annunci, check-in, pulizie e rendicontazione trasparente.">
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --primary: #111827;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(15,23,42,0.12);
+      --maxw: 1100px;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(245,245,247,0.96);
+      border-bottom: 1px solid rgba(148,163,253,0.08);
+    }
+
+    .nav {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo span:nth-child(2) {
+      font-weight: 400;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .btn-nav {
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow);
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 26px 20px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1.7fr);
+      gap: 26px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px 16px;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+      color: var(--primary);
+    }
+
+    .hero-points span::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,253,0.5);
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .hero-card h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .hero-card-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.7rem;
+      margin-bottom: 6px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      font-size: 0.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 12px 11px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 18px rgba(15,23,42,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+
+    .step {
+      background: #ffffff;
+      padding: 10px 9px;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 14px rgba(15,23,42,0.05);
+    }
+
+    .step span {
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .step h3 {
+      font-size: 0.83rem;
+      margin: 2px 0 4px;
+      color: var(--primary);
+    }
+
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .why-list div::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0,2fr) minmax(180px,1.2fr);
+      gap: 14px;
+      font-size: 0.8rem;
+    }
+
+    .about-box {
+      background: #ffffff;
+      padding: 10px 11px;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 16px rgba(15,23,42,0.06);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(260px,1.3fr);
+      gap: 16px;
+      font-size: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-info p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-form {
+      background: #ffffff;
+      padding: 12px 11px;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 16px rgba(15,23,42,0.06);
+      display: grid;
+      gap: 8px;
+      font-size: 0.78rem;
+    }
+
+    .contact-form label {
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.78rem;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      margin-top: 4px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.82rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 20px 20px;
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .steps {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+      .about {
+        grid-template-columns: 1fr;
+      }
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <span>Natalizii Property Management</span>
+        <span>Gestione affitti brevi per proprietari</span>
+      </div>
+      <div class="nav-links">
+        <a href="#servizi">Servizi</a>
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#contatti" class="btn-nav">Contatti</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Gestione completa &bull; Nessun pensiero per il proprietario</div>
+        <h1 class="hero-title">Affitti brevi senza stress.<br>Io gestisco, tu incassi.</h1>
+        <p class="hero-sub">
+          Mi occupo di tutto: pratiche burocratiche, pubblicazione annunci, prezzi, check-in,
+          pulizie e rendicontazione trasparente. Servizio pensato per proprietari che vogliono
+          guadagnare dagli affitti brevi senza doversene occupare personalmente.
+        </p>
+        <div class="hero-points">
+          <span>SCIA, CIR, Alloggiati Web e tassa di soggiorno</span>
+          <span>Gestione annunci Booking, Airbnb e altri portali</span>
+          <span>Check-in, assistenza ospiti e coordinamento pulizie</span>
+          <span>Report mensili chiari su incassi e spese</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#contatti"><button class="btn-primary">Richiedi una valutazione gratuita</button></a>
+          <a href="#servizi"><button class="btn-ghost">Scopri cosa faccio nel dettaglio</button></a>
+        </div>
+        <div class="hero-note">
+          Nessun costo fisso obbligatorio: il modello viene definito insieme al proprietario, in base alle esigenze e alla redditività.
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Come lavoro con i proprietari</h3>
+        <div class="hero-card-row">
+          <span>Analisi appartamento e normativa</span>
+          <span>✔</span>
+        </div>
+        <div class="hero-card-row">
+          <span>Set-up annunci e calendario</span>
+          <span>✔</span>
+        </div>
+        <div class="hero-card-row">
+          <span>Gestione ospiti e pulizie</span>
+          <span>✔</span>
+        </div>
+        <div class="hero-card-row">
+          <span>Report mensile incassi/spese</span>
+          <span>✔</span>
+        </div>
+        <p>
+          Un unico referente operativo per tutti gli aspetti degli affitti brevi.
+          Trasparenza totale su entrate, costi e compenso di gestione.
+        </p>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <h2>Servizi per proprietari</h2>
+      <p class="section-sub">Pacchetti modulari: puoi affidarmi solo la parte operativa oppure la gestione completa “chiavi in mano”.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Start-up & Burocrazia</h3>
+          <p>
+            Supporto per SCIA, CIR/CIN, registrazione Alloggiati Web, imposta di soggiorno e
+            corretta impostazione fiscale degli affitti brevi in collaborazione con il tuo commercialista.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Gestione Annunci & Prezzi</h3>
+          <p>
+            Creazione e ottimizzazione degli annunci sui portali (foto, testi, regole),
+            aggiornamento prezzi e calendario per massimizzare l’occupazione in modo sostenibile.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Operatività & Ospiti</h3>
+          <p>
+            Organizzazione check-in/check-out, comunicazioni con gli ospiti, gestione problemi,
+            coordinamento pulizie e lavanderia, controlli post-soggiorno.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="come-funziona">
+      <h2>Come funziona la collaborazione</h2>
+      <p class="section-sub">Un processo semplice, trasparente e contrattualizzato.</p>
+      <div class="steps">
+        <div class="step">
+          <span>Step 1</span>
+          <h3>Analisi gratuita</h3>
+          <p>Valutazione dell’appartamento, zona, potenziale reddito e verifica requisiti.</p>
+        </div>
+        <div class="step">
+          <span>Step 2</span>
+          <h3>Contratto chiaro</h3>
+          <p>
+            Mandato di gestione con percentuale concordata, senza sorprese. La proprietà resta sempre al proprietario.
+          </p>
+        </div>
+        <div class="step">
+          <span>Step 3</span>
+          <h3>Set-up completo</h3>
+          <p>Pratiche amministrative, creazione annunci, definizione regole casa e flussi operativi.</p>
+        </div>
+        <div class="step">
+          <span>Step 4</span>
+          <h3>Gestione continua</h3>
+          <p>Monitoraggio prenotazioni, ospiti seguiti, casa curata, report mensili sugli incassi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Perché affidarti a Natalizii Property Management</h2>
+      <div class="why-list">
+        <div>Deleghe e pratiche gestite per conto tuo.</div>
+        <div>Modello senza canone fisso (se concordato): guadagno solo se guadagni anche tu.</div>
+        <div>Rendicontazione mensile con numeri chiari e documentati.</div>
+        <div>Esperienza diretta sugli affitti brevi e sulle procedure comunali.</div>
+        <div>Unico referente per burocrazia, ospiti, pulizie e manutenzione.</div>
+        <div>Impostazione nel rispetto delle normative vigenti.</div>
+      </div>
+    </section>
+
+    <section id="chi-sono" class="about">
+      <div>
+        <h2>Chi sono</h2>
+        <p class="section-sub">
+          Mi chiamo <strong>Michael Natalizii</strong> e mi occupo di gestione operativa e amministrativa
+          di appartamenti destinati agli affitti brevi e turistici.
+        </p>
+        <div class="about-box">
+          <p>
+            Seguo personalmente ogni fase: dall’avvio delle pratiche
+            fino all’accoglienza degli ospiti. Il mio obiettivo è permettere al proprietario di
+            ottenere una rendita dagli affitti brevi senza preoccuparsi di regole, portali e gestione quotidiana.
+          </p>
+          <p>
+            Lavoro con accordi scritti, trasparenti e personalizzati in base all’immobile.
+            Nessuna promessa irrealistica, ma numeri chiari e gestione concreta.
+          </p>
+        </div>
+      </div>
+      <div class="about-box">
+        <h3>Dove opero</h3>
+        <p>
+          Focus principale su:
+        </p>
+        <ul style="padding-left:14px; font-size:0.78rem; color:#6b7280;">
+          <li>Milano e provincia</li>
+          <li>Province limitrofe e località turistiche su accordo</li>
+        </ul>
+        <p style="margin-top:6px;">
+          Per nuovi progetti o appartamenti specifici possiamo valutare insieme la miglior formula.
+        </p>
+      </div>
+    </section>
+
+    <section id="contatti" class="contact">
+      <div class="contact-info">
+        <h2>Contattami per una valutazione gratuita</h2>
+        <p class="section-sub">
+          Se hai un appartamento e vuoi capire se l’affitto breve è adatto al tuo caso,
+          scrivimi senza impegno. Ti rispondo personalmente.
+        </p>
+        <p><strong>Email:</strong> <a href="mailto:milanotosi@gmail.com">milanotosi@gmail.com</a></p>
+        <p><strong>Telefono / WhatsApp:</strong> <a href="tel:+393401424232">+39 340 142 4232</a></p>
+      </div>
+      <form class="contact-form">
+        <label for="nome">Nome e cognome *</label>
+        <input id="nome" name="nome" type="text" placeholder="Il tuo nome">
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" placeholder="La tua email">
+
+        <label for="immobile">Città / indirizzo immobile</label>
+        <input id="immobile" name="immobile" type="text" placeholder="Dove si trova l'appartamento?">
+
+        <label for="messaggio">Messaggio *</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Raccontami brevemente la situazione, ti rispondo io."></textarea>
+
+        <button type="submit">Invia richiesta (bozza - da collegare)</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      © <span id="year"></span> Natalizii Property Management – P.IVA 02685790038
+    </div>
+    <div>
+      Servizi di gestione e consulenza per affitti brevi. Non svolgo attività di mediazione immobiliare ai sensi della L. 39/1989.
+    </div>
+  </footer>
+
+  <script>
+    // aggiorna anno
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Nota: per rendere il form funzionante va collegato a un servizio (es. Formspree, EmailJS, backend)
+  </script>
+</body>
+</html>
