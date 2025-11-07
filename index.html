@@ -77,18 +77,37 @@
 
   </section>
 <!-- CONSULENZA -->
-<section id="consulenza" class="consulenza">
-  <h2>Richiedi una consulenza gratuita</h2>
-  <p>Vuoi sapere quanto può rendere il tuo appartamento o casa vacanza? Compila il modulo qui sotto, ti risponderemo entro 24 ore con una valutazione gratuita e personalizzata.</p>
+<!-- FORM CONSULENZA WEB3FORMS -->
+<form action="https://api.web3forms.com/submit" method="POST" class="form" id="consultForm">
+  <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
 
-  <form action="https://formspree.io/f/mnpropertymanagement" method="POST" class="form">
-    <input type="text" name="nome" placeholder="Il tuo nome" required>
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Il tuo nome" required>
     <input type="email" name="email" placeholder="La tua email" required>
-    <input type="text" name="immobile" placeholder="Città o indirizzo dell'immobile">
-    <textarea name="messaggio" rows="5" placeholder="Scrivi qui le tue domande o richieste..." required></textarea>
-    <button type="submit" class="btn">Invia richiesta</button>
-  </form>
-</section>
+  </div>
+
+  <textarea name="message" rows="5" placeholder="Raccontaci del tuo immobile o delle tue esigenze..." required></textarea>
+  <button type="submit" class="btn">Richiedi consulenza</button>
+
+  <p id="consultMessage" style="display:none; margin-top:15px; color:green; font-weight:600;">
+    ✅ Richiesta inviata! Ti risponderemo entro 24 ore.
+  </p>
+</form>
+
+<script>
+  const consultForm = document.getElementById('consultForm');
+  const consultMessage = document.getElementById('consultMessage');
+  consultForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    fetch(consultForm.action, {
+      method: consultForm.method,
+      body: new FormData(consultForm)
+    }).then(() => {
+      consultMessage.style.display = 'block';
+      consultForm.reset();
+    }).catch(error => console.error('Errore invio form:', error));
+  });
+</script>
 
 <!-- CONTATTI -->
 <section id="contatti" class="contatti">
