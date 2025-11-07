@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MN Property Management | Gestione Affitti Brevi Milano e Italia</title>
+  <meta name="description" content="MN Property Management offre servizi professionali di gestione affitti brevi e case vacanza a Milano e in tutta Italia. Dalla SCIA al check-in, dalla pulizia al report finale: assistenza completa per proprietari che vogliono guadagnare senza pensieri.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <script src="https://kit.fontawesome.com/6d65a2a48d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <span class="mn">MN</span> <span class="sub">Property Management</span>
+    </div>
+    <nav class="nav">
+      <a href="#servizi">Servizi</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#chisono">Chi sono</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Gestione Affitti Brevi a Milano e in Italia</h1>
+      <p>Servizi professionali per proprietari che vogliono guadagnare senza pensieri.</p>
+      <a href="#servizi" class="btn">Scopri i nostri servizi</a>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi" class="servizi">
+    <h2>I nostri servizi</h2>
+    <div class="grid">
+      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Dalla prenotazione al check-out, ci occupiamo di tutto.</p></div>
+      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie professionali</h3><p>Servizio accurato e puntuale per ogni ospite.</p></div>
+      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Rendiconti mensili</h3><p>Trasparenza e aggiornamenti chiari sulle entrate.</p></div>
+      <div class="card"><i class="fa-solid fa-file-signature"></i><h3>SCIA e pratiche</h3><p>Gestione di tutte le procedure burocratiche.</p></div>
+      <div class="card"><i class="fa-solid fa-comments"></i><h3>Comunicazioni ospiti</h3><p>Assistenza e supporto 24/7 per ogni esigenza.</p></div>
+      <div class="card"><i class="fa-solid fa-house"></i><h3>Valutazione immobile</h3><p>Analisi gratuita del potenziale del tuo appartamento.</p></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <h2>Le nostre location</h2>
+    <div class="slider">
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1590490359683-3318a3e94f1b?auto=format&fit=crop&w=1600&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80')"></div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
+    </div>
+  </section>
+
+  <!-- CHI SONO -->
+  <section id="chisono" class="chisono">
+    <h2>Chi sono</h2>
+    <p>Mi chiamo <strong>Michael Natalizii</strong> e mi occupo di property management per affitti brevi in tutta Italia. Offro una gestione completa, trasparente e su misura per ogni proprietario, con l’obiettivo di massimizzare il rendimento e garantire esperienze impeccabili agli ospiti.</p>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="contatti">
+    <h2>Contatti</h2>
+    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:mnpropertymanagement@gmail.com">mnpropertymanagement@gmail.com</a></p>
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+393401424232">+39 340 142 4232</a></p>
+    <div class="social">
+      <a href="https://instagram.com/mnproperty.management"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/mnpropertymanagement"><i class="fab fa-facebook"></i></a>
+      <a href="https://tiktok.com/@mnproperty.it"><i class="fab fa-tiktok"></i></a>
+      <a href="https://linkedin.com/company/mnpropertymanagement"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com/@mnpropertymanagement"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 MN Property Management | P.IVA 02685790038</p>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/393401424232?text=Ciao! Vorrei informazioni sui vostri servizi di gestione affitti brevi." class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+</body>
+</html>
