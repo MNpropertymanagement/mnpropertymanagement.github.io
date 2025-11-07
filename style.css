@@ -328,3 +328,107 @@ footer .note {
     margin-top: 10px;
   }
 }
+/* CONTATTI NUOVI */
+.contatti {
+  background-color: white;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.contatti h2 {
+  color: var(--blu);
+  margin-bottom: 20px;
+}
+
+.contatti p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: var(--grigio);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form button {
+  background-color: var(--oro);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background-color: var(--blu);
+  color: white;
+}
+
+.contatti-diretti {
+  margin: 40px 0;
+  font-size: 1rem;
+}
+
+.contatti-diretti p {
+  margin: 8px 0;
+}
+
+.contatti-diretti a {
+  color: var(--blu);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contatti-diretti a:hover {
+  color: var(--oro);
+}
+
+.social {
+  margin: 40px 0;
+}
+
+.social h3 {
+  margin-bottom: 15px;
+  color: var(--blu);
+}
+
+.social a {
+  font-size: 1.8rem;
+  color: var(--blu);
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: var(--oro);
+}
+
+/* MAPPA */
+.mappa iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 30px;
+}
