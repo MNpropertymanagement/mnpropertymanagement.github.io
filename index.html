@@ -97,15 +97,43 @@
   Compila il modulo qui sotto o scrivici direttamente su WhatsApp. Ti risponderemo entro 24 ore.</p>
 
   <!-- FORM -->
- <form action="https://formspree.io/f/myzlgywd" method="POST" class="form">
-    <div class="form-group">
-      <input type="text" name="nome" placeholder="Il tuo nome" required>
-      <input type="email" name="email" placeholder="La tua email" required>
-    </div>
-    <input type="text" name="telefono" placeholder="Il tuo numero di telefono">
-    <textarea name="messaggio" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
-    <button type="submit" class="btn">Invia richiesta</button>
-  </form>
+ <!-- FORM CONTATTI WEB3FORMS -->
+<form action="https://api.web3forms.com/submit" method="POST" class="form" id="contactForm">
+  <!-- Chiave personale Web3Forms -->
+  <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
+
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Il tuo nome" required>
+    <input type="email" name="email" placeholder="La tua email" required>
+  </div>
+
+  <input type="text" name="phone" placeholder="Il tuo numero di telefono">
+  <textarea name="message" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+
+  <button type="submit" class="btn">Invia richiesta</button>
+
+  <!-- Messaggio di conferma -->
+  <p id="formMessage" style="display:none; margin-top:15px; color:green; font-weight:600;">
+    ✅ Grazie! Ti contatteremo entro 24 ore.
+  </p>
+</form>
+
+<!-- Script per mostrare messaggio senza ricaricare pagina -->
+<script>
+  const form = document.getElementById('contactForm');
+  const message = document.getElementById('formMessage');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form)
+    }).then(() => {
+      message.style.display = 'block';
+      form.reset();
+    }).catch(error => console.error('Errore invio form:', error));
+  });
+</script>
+
 
   <!-- CONTATTI DIRETTI -->
   <div class="contatti-diretti">
