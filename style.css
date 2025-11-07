@@ -424,11 +424,11 @@ footer .note {
   color: var(--oro);
 }
 
-/* MAPPA */
-.mappa iframe {
-  width: 100%;
-  height: 350px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 30px;
+.contatti-diretti p strong {
+  color: var(--blu);
+  font-size: 1.1rem;
 }
+footer p {
+  margin: 6px 0;
+}
+
