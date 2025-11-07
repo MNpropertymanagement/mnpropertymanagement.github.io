@@ -187,86 +187,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* CONTATTI */
-.contatti {
-  background-color: var(--bianco);
-  padding: 80px 10%;
-  text-align: center;
-}
-
-.contatti h2 {
-  color: var(--blu);
-  margin-bottom: 30px;
-}
-
-.contatti a {
-  color: var(--blu);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contatti a:hover {
-  color: var(--oro);
-}
-
-.social a {
-  color: var(--blu);
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: 0.3s;
-}
-
-.social a:hover {
-  color: var(--oro);
-}
-
-/* FOOTER */
-footer {
-  background-color: var(--blu);
-  color: white;
-  text-align: center;
-  padding: 15px 5%;
-  font-size: 0.9rem;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  font-size: 2rem;
-  border-radius: 50%;
-  padding: 10px 15px;
-  text-decoration: none;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-  z-index: 200;
-  transition: 0.3s;
-}
-
-.whatsapp:hover {
-  background-color: #1ebe5d;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-text {
-    padding: 1.5rem 2rem;
-  }
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .header {
-    flex-direction: column;
-  }
-  .nav {
-    margin-top: 10px;
-  }
-}
 /* CONSULENZA */
 .consulenza {
   background-color: white;
@@ -322,4 +242,89 @@ footer {
   color: white;
 }
 
+/* CONTATTI */
+.contatti {
+  background-color: var(--bianco);
+  padding: 80px 10%;
+  text-align: center;
+}
 
+.contatti h2 {
+  color: var(--blu);
+  margin-bottom: 30px;
+}
+
+.contatti a {
+  color: var(--blu);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contatti a:hover {
+  color: var(--oro);
+}
+
+.social a {
+  color: var(--blu);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: var(--oro);
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--blu);
+  color: white;
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.9rem;
+}
+
+footer .note {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #E0E7FF;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px 15px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 200;
+  transition: 0.3s;
+}
+
+.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-text {
+    padding: 1.5rem 2rem;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .nav {
+    margin-top: 10px;
+  }
+}
