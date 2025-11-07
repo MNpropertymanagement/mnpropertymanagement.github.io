@@ -267,3 +267,59 @@ footer {
     margin-top: 10px;
   }
 }
+/* CONSULENZA */
+.consulenza {
+  background-color: white;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.consulenza h2 {
+  color: var(--blu);
+  margin-bottom: 15px;
+}
+
+.consulenza p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form input:focus, .form textarea:focus {
+  border-color: var(--blu);
+}
+
+.form button {
+  background-color: var(--oro);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background-color: var(--blu);
+  color: white;
+}
+
+
