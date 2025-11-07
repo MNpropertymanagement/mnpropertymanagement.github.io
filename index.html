@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natalizii Property Management - Gestione Affitti Brevi</title>
-  <meta name="description" content="Gestione completa affitti brevi per proprietari: SCIA, CIR, Alloggiati Web, pubblicazione annunci, check-in, pulizie e rendicontazione trasparente.">
+  <title>MN Property Management | Gestione Affitti Brevi in Italia</title>
+  <meta name="description" content="MN Property Management: gestione completa affitti brevi per proprietari. Milano, Favignana, Marsala, Pila e tutta Italia. Pratiche, annunci, ospiti, pulizie, rendicontazione.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E3A8A'/%3E%3Cpath d='M18 30L32 18l14 12v16H18V30Z' fill='%23FACC15'/%3E%3Cpath d='M26 46V34h12v12' fill='none' stroke='%231E3A8A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg: #f5f5f7;
-      --primary: #111827;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --text: #111827;
+      --bg: #f9fafb;
+      --primary: #0f172a;
+      --blue: #1e3a8a;
+      --blue-soft: #e0ebff;
+      --gold: #facc15;
+      --gold-soft: #fef9c3;
       --muted: #6b7280;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(15,23,42,0.12);
-      --maxw: 1100px;
-      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --radius: 16px;
+      --shadow-soft: 0 14px 40px rgba(15,23,42,0.12);
+      --font: system-ui, -apple-system, BlinkMacSystemFont, -apple-system, sans-serif;
+      --maxw: 1180px;
     }
 
     * {
@@ -27,8 +29,8 @@
 
     body {
       font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
+      background: radial-gradient(circle at top, #eff6ff 0, #f9fafb 40%, #ffffff 100%);
+      color: var(--primary);
       line-height: 1.6;
     }
 
@@ -41,9 +43,9 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(14px);
-      background: rgba(245,245,247,0.96);
-      border-bottom: 1px solid rgba(148,163,253,0.08);
+      backdrop-filter: blur(16px);
+      background: rgba(249,250,251,0.96);
+      border-bottom: 1px solid rgba(148,163,253,0.14);
     }
 
     .nav {
@@ -56,47 +58,74 @@
       gap: 18px;
     }
 
-    .logo {
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(15,23,42,0.18);
+    }
+
+    .logo-icon span {
+      font-size: 0.9rem;
       font-weight: 700;
-      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    .logo-title {
       display: flex;
       flex-direction: column;
       line-height: 1.2;
     }
 
-    .logo span:nth-child(2) {
-      font-weight: 400;
+    .logo-title strong {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .logo-title span {
       font-size: 0.7rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
     }
 
     .nav-links {
       display: flex;
       gap: 16px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--muted);
+      align-items: center;
     }
 
     .nav-links a {
       padding: 6px 10px;
       border-radius: 999px;
-      transition: all 0.2s ease;
+      transition: all 0.22s ease;
     }
 
     .nav-links a:hover {
-      background: var(--accent-soft);
-      color: var(--accent);
+      background: var(--blue-soft);
+      color: var(--blue);
     }
 
     .btn-nav {
       padding: 7px 16px;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--blue);
       color: #fff;
-      font-size: 0.85rem;
-      box-shadow: var(--shadow);
+      font-size: 0.8rem;
+      box-shadow: var(--shadow-soft);
     }
 
     main {
@@ -105,39 +134,71 @@
       padding: 26px 20px 40px;
     }
 
+    /* HERO */
+
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1.7fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1.9fr);
+      gap: 30px;
       align-items: center;
-      margin-bottom: 40px;
+      margin: 18px 0 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .badge span {
+      font-size: 0.72rem;
     }
 
     .hero-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
+      font-size: 2.1rem;
+      font-weight: 800;
       color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      color: var(--blue);
     }
 
     .hero-sub {
       font-size: 0.97rem;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      max-width: 520px;
     }
 
     .hero-points {
       display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 8px 16px;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
+      gap: 6px 16px;
+      font-size: 0.8rem;
+      margin-bottom: 16px;
       color: var(--primary);
     }
 
+    .hero-points span {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
     .hero-points span::before {
-      content: "• ";
-      color: var(--accent);
+      content: "✓";
+      color: var(--blue);
+      font-weight: 700;
+      margin-top: 1px;
+      font-size: 0.78rem;
     }
 
     .hero-cta {
@@ -151,79 +212,112 @@
     .btn-primary {
       padding: 10px 20px;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--blue);
       color: #fff;
       font-size: 0.9rem;
       border: none;
       cursor: pointer;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-ghost {
-      padding: 9px 16px;
+      padding: 9px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,253,0.5);
-      font-size: 0.85rem;
-      color: var(--accent);
-      background: #fff;
+      border: 1px solid rgba(30,58,138,0.24);
+      font-size: 0.8rem;
+      color: var(--blue);
+      background: #ffffff;
       cursor: pointer;
     }
 
     .hero-note {
-      font-size: 0.75rem;
+      font-size: 0.73rem;
       color: var(--muted);
     }
 
     .hero-card {
       background: #ffffff;
-      border-radius: var(--radius);
-      padding: 18px 16px;
-      box-shadow: var(--shadow);
+      border-radius: 22px;
+      padding: 16px 15px 14px;
+      box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 0.8rem;
+      gap: 8px;
+      font-size: 0.78rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(250,204,21,0.12), transparent 55%);
+      pointer-events: none;
     }
 
     .hero-card h3 {
-      font-size: 0.92rem;
+      font-size: 0.96rem;
       font-weight: 600;
       color: var(--primary);
     }
 
-    .hero-card-row {
+    .hero-tag {
+      font-size: 0.65rem;
+      color: var(--blue);
+      background: var(--blue-soft);
+      padding: 3px 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .hero-row {
       display: flex;
       justify-content: space-between;
       gap: 8px;
       color: var(--muted);
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
+    .hero-row span:last-child {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .hero-locations {
+      display: flex;
+      flex-wrap: wrap;
       gap: 6px;
-      padding: 4px 10px;
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .hero-locations span {
+      padding: 3px 8px;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.7rem;
-      margin-bottom: 6px;
+      background: #f3f4ff;
+      color: var(--blue);
     }
 
     section {
-      margin-bottom: 32px;
+      margin-bottom: 34px;
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-size: 1.28rem;
+      margin-bottom: 8px;
       color: var(--primary);
+      font-weight: 700;
     }
 
     .section-sub {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--muted);
       margin-bottom: 12px;
+      max-width: 620px;
     }
 
     .grid-3 {
@@ -237,7 +331,7 @@
       background: #ffffff;
       padding: 12px 11px;
       border-radius: var(--radius);
-      box-shadow: 0 4px 18px rgba(15,23,42,0.06);
+      box-shadow: 0 4px 16px rgba(15,23,42,0.06);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -246,12 +340,24 @@
     .card h3 {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--primary);
+      color: var(--blue);
     }
 
     .card p {
       font-size: 0.78rem;
       color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--primary);
+      font-size: 0.65rem;
+      margin-bottom: 2px;
     }
 
     .steps {
@@ -269,11 +375,11 @@
     }
 
     .step span {
-      font-size: 0.7rem;
-      color: var(--accent);
+      font-size: 0.67rem;
+      color: var(--blue);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
 
     .step h3 {
@@ -285,29 +391,61 @@
     .why-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 8px;
+      gap: 7px;
       font-size: 0.78rem;
       color: var(--muted);
     }
 
     .why-list div::before {
       content: "✓ ";
-      color: var(--accent);
+      color: var(--blue);
       font-weight: 600;
     }
 
     .about {
       display: grid;
-      grid-template-columns: minmax(0,2fr) minmax(180px,1.2fr);
-      gap: 14px;
+      grid-template-columns: minmax(0,2.1fr) minmax(220px,1.4fr);
+      gap: 16px;
       font-size: 0.8rem;
     }
 
     .about-box {
       background: #ffffff;
-      padding: 10px 11px;
+      padding: 11px 11px;
       border-radius: var(--radius);
       box-shadow: 0 3px 16px rgba(15,23,42,0.06);
+    }
+
+    .about-box h3 {
+      font-size: 0.9rem;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .props {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      font-size: 0.75rem;
+      margin-top: 4px;
+    }
+
+    .prop-card {
+      background: linear-gradient(145deg,#ffffff,#eff6ff);
+      border-radius: 12px;
+      padding: 8px 8px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.05);
+    }
+
+    .prop-card strong {
+      font-size: 0.8rem;
+      color: var(--blue);
+    }
+
+    .prop-card span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--muted);
     }
 
     .contact {
@@ -359,17 +497,17 @@
       padding: 9px 12px;
       border-radius: 999px;
       border: none;
-      background: var(--accent);
+      background: var(--blue);
       color: #ffffff;
       font-size: 0.82rem;
       cursor: pointer;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
     }
 
     footer {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 14px 20px 20px;
+      padding: 16px 20px 22px;
       font-size: 0.7rem;
       color: var(--muted);
       display: flex;
@@ -377,12 +515,16 @@
       gap: 4px;
     }
 
-    @media (max-width: 800px) {
+    footer a {
+      color: var(--blue);
+    }
+
+    @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
       }
       .grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
       .steps {
         grid-template-columns: repeat(2, minmax(0,1fr));
@@ -390,16 +532,18 @@
       .about {
         grid-template-columns: 1fr;
       }
-      .contact {
-        grid-template-columns: 1fr;
+      .props {
+        grid-template-columns: repeat(2, minmax(0,1fr));
       }
       .nav-links {
         display: none;
       }
     }
 
-    @media (max-width: 480px) {
-      .steps {
+    @media (max-width: 540px) {
+      .grid-3,
+      .steps,
+      .props {
         grid-template-columns: 1fr;
       }
     }
@@ -408,212 +552,299 @@
 <body>
   <header>
     <div class="nav">
-      <div class="logo">
-        <span>Natalizii Property Management</span>
-        <span>Gestione affitti brevi per proprietari</span>
+      <div class="logo-wrap">
+        <div class="logo-icon">
+          <span>MN</span>
+        </div>
+        <div class="logo-title">
+          <strong>MN Property Management</strong>
+          <span>Affitti brevi & gestione completa</span>
+        </div>
       </div>
       <div class="nav-links">
         <a href="#servizi">Servizi</a>
         <a href="#come-funziona">Come funziona</a>
-        <a href="#chi-sono">Chi sono</a>
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#immobili">Immobili</a>
         <a href="#contatti" class="btn-nav">Contatti</a>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="badge">Gestione completa &bull; Nessun pensiero per il proprietario</div>
-        <h1 class="hero-title">Affitti brevi senza stress.<br>Io gestisco, tu incassi.</h1>
+        <div class="badge">
+          <span>Gestione completa</span> · <span>Proprietari senza pensieri</span>
+        </div>
+        <h1 class="hero-title">
+          Affitti brevi gestiti in modo <span>professionale</span>.
+        </h1>
         <p class="hero-sub">
-          Mi occupo di tutto: pratiche burocratiche, pubblicazione annunci, prezzi, check-in,
-          pulizie e rendicontazione trasparente. Servizio pensato per proprietari che vogliono
-          guadagnare dagli affitti brevi senza doversene occupare personalmente.
+          MN Property Management supporta i proprietari nella gestione degli affitti brevi:
+          pratiche burocratiche, portali online, ospiti, pulizie e rendicontazione. Focus su
+          Milano, esperienza operativa in tutta Italia.
         </p>
         <div class="hero-points">
-          <span>SCIA, CIR, Alloggiati Web e tassa di soggiorno</span>
-          <span>Gestione annunci Booking, Airbnb e altri portali</span>
-          <span>Check-in, assistenza ospiti e coordinamento pulizie</span>
-          <span>Report mensili chiari su incassi e spese</span>
+          <span>SCIA, CIR/CIN, Alloggiati Web, tassa di soggiorno.</span>
+          <span>Annunci ottimizzati su Booking, Airbnb e altri portali.</span>
+          <span>Check-in, assistenza ospiti, pulizie e controlli finali.</span>
+          <span>Report mensili chiari, compenso trasparente.</span>
         </div>
         <div class="hero-cta">
           <a href="#contatti"><button class="btn-primary">Richiedi una valutazione gratuita</button></a>
-          <a href="#servizi"><button class="btn-ghost">Scopri cosa faccio nel dettaglio</button></a>
+          <a href="#servizi"><button class="btn-ghost">Scopri i servizi per proprietari</button></a>
         </div>
         <div class="hero-note">
-          Nessun costo fisso obbligatorio: il modello viene definito insieme al proprietario, in base alle esigenze e alla redditività.
+          Nessun canone fisso obbligatorio: il modello di gestione viene definito su misura in base all’immobile e agli obiettivi del proprietario.
         </div>
       </div>
       <div class="hero-card">
-        <h3>Come lavoro con i proprietari</h3>
-        <div class="hero-card-row">
-          <span>Analisi appartamento e normativa</span>
-          <span>✔</span>
+        <div class="hero-tag">Case vere, gestione reale, numeri chiari.</div>
+        <h3>Un partner unico per i tuoi affitti brevi</h3>
+        <div class="hero-row">
+          <span>Milano & grandi città</span>
+          <span>Gestione completa</span>
         </div>
-        <div class="hero-card-row">
-          <span>Set-up annunci e calendario</span>
-          <span>✔</span>
+        <div class="hero-row">
+          <span>Sicilia (Favignana, Marsala)</span>
+          <span>Local host dedicati</span>
         </div>
-        <div class="hero-card-row">
-          <span>Gestione ospiti e pulizie</span>
-          <span>✔</span>
-        </div>
-        <div class="hero-card-row">
-          <span>Report mensile incassi/spese</span>
-          <span>✔</span>
+        <div class="hero-row">
+          <span>Montagna (es. Pila)</span>
+          <span>Setup & coordinamento</span>
         </div>
         <p>
-          Un unico referente operativo per tutti gli aspetti degli affitti brevi.
-          Trasparenza totale su entrate, costi e compenso di gestione.
+          Dal primo adempimento fino all’ultima recensione: seguo personalmente ogni fase,
+          con deleghe chiare e totale trasparenza verso il proprietario.
         </p>
+        <div class="hero-locations">
+          <span>Milano</span>
+          <span>Favignana</span>
+          <span>Marsala</span>
+          <span>Pila</span>
+          <span>Altre località su richiesta</span>
+        </div>
       </div>
     </section>
 
+    <!-- SERVIZI -->
     <section id="servizi">
       <h2>Servizi per proprietari</h2>
-      <p class="section-sub">Pacchetti modulari: puoi affidarmi solo la parte operativa oppure la gestione completa “chiavi in mano”.</p>
+      <p class="section-sub">
+        Puoi affidarmi l’intera gestione “chiavi in mano” oppure solo alcune fasi
+        (co-hosting, avvio pratiche, gestione portali). Tutto viene regolato da
+        un accordo scritto, semplice e trasparente.
+      </p>
       <div class="grid-3">
         <div class="card">
-          <h3>Start-up & Burocrazia</h3>
+          <div class="pill">Start-Up & Burocrazia</div>
+          <h3>SCIA, CIR, Alloggiati, Tassa</h3>
           <p>
-            Supporto per SCIA, CIR/CIN, registrazione Alloggiati Web, imposta di soggiorno e
-            corretta impostazione fiscale degli affitti brevi in collaborazione con il tuo commercialista.
+            Supporto operativo per aprire correttamente l’alloggio ad uso turistico:
+            SCIA, codice identificativo, registrazione Alloggiati Web e imposta di soggiorno.
           </p>
         </div>
         <div class="card">
-          <h3>Gestione Annunci & Prezzi</h3>
+          <div class="pill">Visibilità & Prezzi</div>
+          <h3>Annunci che funzionano</h3>
           <p>
-            Creazione e ottimizzazione degli annunci sui portali (foto, testi, regole),
-            aggiornamento prezzi e calendario per massimizzare l’occupazione in modo sostenibile.
+            Creazione e ottimizzazione annunci su Booking, Airbnb e altri portali:
+            foto, testi, regole della casa, politiche di cancellazione, prezzi dinamici.
           </p>
         </div>
         <div class="card">
-          <h3>Operatività & Ospiti</h3>
+          <div class="pill">Gestione Operativa</div>
+          <h3>Ospiti & Logistica</h3>
           <p>
-            Organizzazione check-in/check-out, comunicazioni con gli ospiti, gestione problemi,
-            coordinamento pulizie e lavanderia, controlli post-soggiorno.
+            Check-in/check-out, contatto con gli ospiti, gestione imprevisti, coordinamento
+            pulizie, lavanderia e controlli dopo ogni soggiorno.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">Trasparenza</div>
+          <h3>Rendicontazione mensile</h3>
+          <p>
+            Report chiari con incassi lordi, commissioni portali, spese vive e quota di gestione.
+            Il proprietario vede sempre come vengono generati i risultati.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">Personalizzazione</div>
+          <h3>Soluzioni su misura</h3>
+          <p>
+            Ogni appartamento è diverso: definiamo insieme percentuale, servizi inclusi
+            e livello di coinvolgimento desiderato dal proprietario.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">Supporto continuo</div>
+          <h3>Un referente unico</h3>
+          <p>
+            Un solo contatto per tutto: burocrazia, ospiti, pulizie e strategia.
+            Nessun call center, nessuna gestione anonima.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- COME FUNZIONA -->
     <section id="come-funziona">
       <h2>Come funziona la collaborazione</h2>
-      <p class="section-sub">Un processo semplice, trasparente e contrattualizzato.</p>
+      <p class="section-sub">Processo chiaro, nessun vincolo nascosto.</p>
       <div class="steps">
         <div class="step">
           <span>Step 1</span>
-          <h3>Analisi gratuita</h3>
-          <p>Valutazione dell’appartamento, zona, potenziale reddito e verifica requisiti.</p>
+          <h3>Confronto iniziale</h3>
+          <p>Analisi appartamento, zona, normativa e potenziale reddito.</p>
         </div>
         <div class="step">
           <span>Step 2</span>
-          <h3>Contratto chiaro</h3>
-          <p>
-            Mandato di gestione con percentuale concordata, senza sorprese. La proprietà resta sempre al proprietario.
-          </p>
+          <h3>Mandato di gestione</h3>
+          <p>Contratto semplice dove definiamo ruoli, percentuali e servizi inclusi.</p>
         </div>
         <div class="step">
           <span>Step 3</span>
           <h3>Set-up completo</h3>
-          <p>Pratiche amministrative, creazione annunci, definizione regole casa e flussi operativi.</p>
+          <p>Pratiche amministrative, annunci online, regole casa, flussi operativi.</p>
         </div>
         <div class="step">
           <span>Step 4</span>
-          <h3>Gestione continua</h3>
-          <p>Monitoraggio prenotazioni, ospiti seguiti, casa curata, report mensili sugli incassi.</p>
+          <h3>Gestione & report</h3>
+          <p>Operatività quotidiana, contatto ospiti e report mensili al proprietario.</p>
         </div>
       </div>
     </section>
 
+    <!-- PERCHE NOI -->
     <section>
-      <h2>Perché affidarti a Natalizii Property Management</h2>
+      <h2>Perché scegliere MN Property Management</h2>
       <div class="why-list">
-        <div>Deleghe e pratiche gestite per conto tuo.</div>
-        <div>Modello senza canone fisso (se concordato): guadagno solo se guadagni anche tu.</div>
-        <div>Rendicontazione mensile con numeri chiari e documentati.</div>
-        <div>Esperienza diretta sugli affitti brevi e sulle procedure comunali.</div>
-        <div>Unico referente per burocrazia, ospiti, pulizie e manutenzione.</div>
-        <div>Impostazione nel rispetto delle normative vigenti.</div>
+        <div>Gestione concreta, basata su casi reali e non solo teoria.</div>
+        <div>Totale trasparenza su incassi, costi e compenso.</div>
+        <div>Supporto per affitti brevi conforme alle normative locali.</div>
+        <div>Nessun canone fisso obbligatorio: si guadagna insieme.</div>
+        <div>Unico referente per adempimenti, ospiti, pulizie e fornitori.</div>
+        <div>Possibilità di gestione in diverse località italiane.</div>
       </div>
     </section>
 
-    <section id="chi-sono" class="about">
+    <!-- CHI SIAMO -->
+    <section id="chi-siamo" class="about">
       <div>
-        <h2>Chi sono</h2>
+        <h2>Chi c’è dietro il servizio</h2>
         <p class="section-sub">
-          Mi chiamo <strong>Michael Natalizii</strong> e mi occupo di gestione operativa e amministrativa
-          di appartamenti destinati agli affitti brevi e turistici.
+          MN Property Management nasce dall’esperienza diretta nella gestione di appartamenti destinati
+          agli affitti brevi, tra pratiche amministrative, portali online e rapporto con i proprietari.
         </p>
         <div class="about-box">
+          <h3>Michael Natalizii</h3>
           <p>
-            Seguo personalmente ogni fase: dall’avvio delle pratiche
-            fino all’accoglienza degli ospiti. Il mio obiettivo è permettere al proprietario di
-            ottenere una rendita dagli affitti brevi senza preoccuparsi di regole, portali e gestione quotidiana.
+            Mi occupo in prima persona della gestione operativa e amministrativa degli immobili affidati:
+            dalla SCIA al controllo dopo il check-out. Il mio obiettivo è semplice: permettere al proprietario
+            di ottenere una rendita dagli affitti brevi senza doversi preoccupare di nulla.
           </p>
           <p>
-            Lavoro con accordi scritti, trasparenti e personalizzati in base all’immobile.
-            Nessuna promessa irrealistica, ma numeri chiari e gestione concreta.
+            Lavoro con accordi chiari, documentazione in ordine e un approccio pratico: ogni attività è tracciata
+            e ogni scelta viene condivisa con il proprietario.
           </p>
         </div>
       </div>
       <div class="about-box">
         <h3>Dove opero</h3>
         <p>
-          Focus principale su:
+          Operatività principale a:
         </p>
         <ul style="padding-left:14px; font-size:0.78rem; color:#6b7280;">
           <li>Milano e provincia</li>
-          <li>Province limitrofe e località turistiche su accordo</li>
+          <li>Favignana & Marsala</li>
+          <li>Pila e località di montagna selezionate</li>
         </ul>
-        <p style="margin-top:6px;">
-          Per nuovi progetti o appartamenti specifici possiamo valutare insieme la miglior formula.
+        <p style="margin-top:4px;">
+          Valuto insieme al proprietario la soluzione migliore anche in altre città italiane.
         </p>
       </div>
     </section>
 
+    <!-- IMMOBILI -->
+    <section id="immobili">
+      <h2>Immobili & progetti seguiti</h2>
+      <p class="section-sub">
+        Alcuni esempi di tipologia di immobili gestiti o gestibili con il modello MN Property Management.
+        Questa sezione può essere aggiornata con foto reali e case specifiche.
+      </p>
+      <div class="props">
+        <div class="prop-card">
+          <strong>Urban Loft Milano</strong>
+          <span>Bilocale moderno per business & leisure, gestione completa.</span>
+        </div>
+        <div class="prop-card">
+          <strong>Casa Mare Favignana</strong>
+          <span>Alloggio turistico vicino al mare, coordinamento locale.</span>
+        </div>
+        <div class="prop-card">
+          <strong>Vista Saline Marsala</strong>
+          <span>Affitti stagionali con gestione annunci e pricing.</span>
+        </div>
+        <div class="prop-card">
+          <strong>Chalet Pila</strong>
+          <span>Gestione stagionale in località sciistica.</span>
+        </div>
+        <div class="prop-card">
+          <strong>City Apartments</strong>
+          <span>Soluzioni per affitti brevi in città ad alto flusso.</span>
+        </div>
+        <div class="prop-card">
+          <strong>Progetti su misura</strong>
+          <span>Valutazione caso per caso in nuove destinazioni.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
     <section id="contatti" class="contact">
       <div class="contact-info">
-        <h2>Contattami per una valutazione gratuita</h2>
+        <h2>Parliamone</h2>
         <p class="section-sub">
-          Se hai un appartamento e vuoi capire se l’affitto breve è adatto al tuo caso,
-          scrivimi senza impegno. Ti rispondo personalmente.
+          Se hai un appartamento (a Milano o in altre località) e vuoi capire se
+          l’affitto breve è una soluzione adatta, scrivimi senza impegno.
         </p>
-        <p><strong>Email:</strong> <a href="mailto:milanotosi@gmail.com">milanotosi@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:mnpropertymanagement@gmail.com">mnpropertymanagement@gmail.com</a></p>
         <p><strong>Telefono / WhatsApp:</strong> <a href="tel:+393401424232">+39 340 142 4232</a></p>
+        <p style="font-size:0.74rem; color:#6b7280; margin-top:4px;">
+          Rispondo personalmente e possiamo fissare una call conoscitiva o un sopralluogo.
+        </p>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" action="https://formspree.io/f/xqakzdnb" method="POST">
         <label for="nome">Nome e cognome *</label>
-        <input id="nome" name="nome" type="text" placeholder="Il tuo nome">
+        <input id="nome" name="nome" type="text" required placeholder="Il tuo nome">
 
         <label for="email">Email *</label>
-        <input id="email" name="email" type="email" placeholder="La tua email">
+        <input id="email" name="_replyto" type="email" required placeholder="La tua email">
 
         <label for="immobile">Città / indirizzo immobile</label>
         <input id="immobile" name="immobile" type="text" placeholder="Dove si trova l'appartamento?">
 
         <label for="messaggio">Messaggio *</label>
-        <textarea id="messaggio" name="messaggio" placeholder="Raccontami brevemente la situazione, ti rispondo io."></textarea>
+        <textarea id="messaggio" name="messaggio" required placeholder="Raccontami brevemente la situazione."></textarea>
 
-        <button type="submit">Invia richiesta (bozza - da collegare)</button>
+        <button type="submit">Invia richiesta</button>
+        <span style="font-size:0.65rem; color:#9ca3af;">
+          Compilando il form acconsenti al trattamento dei dati per essere ricontattato. Nessuna condivisione con terzi.
+        </span>
       </form>
     </section>
   </main>
 
   <footer>
-    <div>
-      © <span id="year"></span> Natalizii Property Management – P.IVA 02685790038
-    </div>
-    <div>
-      Servizi di gestione e consulenza per affitti brevi. Non svolgo attività di mediazione immobiliare ai sensi della L. 39/1989.
-    </div>
+    <div>© <span id="year"></span> MN Property Management – P.IVA 02685790038</div>
+    <div>Servizi di gestione e consulenza per affitti brevi per conto dei proprietari.</div>
+    <div>Non svolgo attività di mediazione immobiliare ai sensi della L. 39/1989.</div>
   </footer>
 
   <script>
-    // aggiorna anno
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Nota: per rendere il form funzionante va collegato a un servizio (es. Formspree, EmailJS, backend)
   </script>
 </body>
 </html>
