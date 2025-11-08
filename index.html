@@ -4,59 +4,408 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MN Property Management | Gestione Affitti Brevi Milano e Italia</title>
-  <meta name="description" content="MN Property Management è specializzata nella gestione di affitti brevi, case vacanza e locazioni turistiche a Milano, Favignana, Marsala e in tutta Italia. Dalla SCIA al check-in, offriamo una gestione completa e trasparente.">
-  <meta name="keywords" content="gestione affitti brevi Milano, property management, case vacanza, affitti turistici, locazioni brevi, MN Property Management">
+
+  <meta name="description" content="MN Property Management è specializzata nella gestione di affitti brevi, case vacanza e locazioni turistiche a Milano, Favignana, Marsala, Pila, Robbio, Vercelli e Novara. Dalla SCIA al check-in, gestione completa e trasparente per proprietari.">
+  <meta name="keywords" content="gestione affitti brevi, affitti brevi Milano, property management, case vacanza, locazioni turistiche, MN Property Management, Milano, Favignana, Marsala, Pila, Robbio, Vercelli, Novara">
+
+  <!-- STILI GLOBALI -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.ico">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon-mn.png">
+  <!-- ICON FONT -->
   <script src="https://kit.fontawesome.com/6d65a2a48d.js" crossorigin="anonymous"></script>
 
   <style>
-    /* --- BASE --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; }
-    h1, h2, h3 { color: #002b5b; }
 
-    /* --- HEADER --- */
-    header { background: #002b5b; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; position: sticky; top: 0; z-index: 10; }
-    .logo { font-weight: 700; font-size: 1.4rem; color: #d4af37; }
-    nav ul { display: flex; list-style: none; gap: 25px; }
-    nav a { color: white; text-decoration: none; font-weight: 500; }
-    nav a:hover { color: #d4af37; }
+    /* COLORI */
+    :root {
+      --blu: #002b5b;
+      --oro: #d4af37;
+      --grigio: #f5f5f5;
+    }
 
-    /* --- HERO SLIDER --- */
-    .hero { position: relative; overflow: hidden; height: 85vh; }
-    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s; }
-    .slide.active { opacity: 1; }
-    .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; background: rgba(0,0,0,0.4); padding: 30px 40px; border-radius: 12px; }
-    .hero-text h1 { font-size: 2rem; margin-bottom: 10px; }
-    .btn { display: inline-block; background: #d4af37; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; margin-top: 15px; transition: 0.3s; }
-    .btn:hover { background: #b68d24; }
+    /* HEADER + NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blu);
+      color: #fff;
+      padding: 10px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    /* --- SEZIONI --- */
-    section { padding: 80px 10%; text-align: center; }
-    p { margin-top: 15px; line-height: 1.7; }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-    /* --- SERVIZI --- */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-    .card { background: #f8f8f8; padding: 25px; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
-    .card i { font-size: 2rem; color: #d4af37; margin-bottom: 10px; }
+    .logo-wrap img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
 
-    /* --- GALLERY --- */
-    .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--oro);
+      letter-spacing: 0.5px;
+    }
 
-    /* --- CONTATTI --- */
-    .form { max-width: 600px; margin: 0 auto; text-align: left; }
-    .form input, .form textarea { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 8px; }
-    .form button { margin-top: 15px; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
 
-    /* --- FOOTER --- */
-    footer { background: #002b5b; color: white; padding: 40px 10%; text-align: center; }
-    footer a { color: #d4af37; text-decoration: none; }
-    footer .note { font-size: 0.85rem; color: #ccc; margin-top: 10px; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-    /* --- BANNER COOKIE E TERMINI --- */
-    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0,43,91,0.95); color: white; text-align: center; padding: 15px; font-size: 0.9rem; display: none; }
-    .cookie-banner button { background: #d4af37; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-left: 10px; font-weight: 600; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--oro);
+    }
+
+    /* HAMBURGER (MOBILE) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--blu);
+      padding: 10px 8% 15px;
+      gap: 10px;
+    }
+
+    .nav-mobile a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--oro);
+    }
+
+    /* HERO SLIDER */
+    .hero {
+      position: relative;
+      height: 80vh;
+      min-height: 460px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.6));
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      max-width: 650px;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 24px;
+      border-radius: 25px;
+      background: var(--oro);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b68d24;
+    }
+
+    /* SEZIONI */
+    section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    section p {
+      margin-top: 10px;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* SERVIZI */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: var(--grigio);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .card i {
+      font-size: 1.7rem;
+      color: var(--oro);
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--blu);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* GALLERY */
+    .gallery-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery-wrap img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* CHI SONO */
+    .social-personal {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .social-personal a {
+      color: var(--oro);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    .social-personal a:hover {
+      text-decoration: underline;
+    }
+
+    /* CONTATTI + FORM */
+    .form {
+      max-width: 550px;
+      margin: 25px auto 0;
+      text-align: left;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    .form button {
+      margin-top: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contatti-diretti {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .contatti-diretti a {
+      color: var(--blu);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contatti-diretti a:hover {
+      color: var(--oro);
+    }
+
+    .social-footer {
+      margin-top: 12px;
+      font-size: 1.2rem;
+    }
+
+    .social-footer a {
+      color: #fff;
+      margin: 0 6px;
+      text-decoration: none;
+    }
+
+    .social-footer a:hover {
+      color: var(--oro);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--blu);
+      color: #fff;
+      padding: 25px 8% 35px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--oro);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .note {
+      color: #ccc;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* COOKIE / TERMINI BANNER */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,43,91,0.97);
+      color: #fff;
+      padding: 12px 8%;
+      font-size: 0.8rem;
+      display: none;
+      display: none;
+      text-align: center;
+      z-index: 999;
+    }
+
+    .cookie-banner a {
+      color: var(--oro);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cookie-banner button {
+      background: var(--oro);
+      border: none;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #fff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-mobile.show {
+        display: flex;
+      }
+
+      .hero-text {
+        width: 90%;
+        padding: 18px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .card {
+        text-align: left;
+      }
+    }
   </style>
 </head>
 
@@ -64,7 +413,12 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">MN Property Management</div>
+    <div class="logo-wrap">
+      <!-- Carica logo-mn.png nella root del sito -->
+      <img src="logo-mn.png" alt="MN Property Management">
+      <div class="logo-text">MN Property Management</div>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -75,107 +429,203 @@
         <li><a href="richiedi-soggiorno.html">Prenota</a></li>
       </ul>
     </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </header>
+
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#home">Home</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#chisono">Chi sono</a>
+    <a href="#contatti">Contatti</a>
+    <a href="richiedi-soggiorno.html">Prenota</a>
+  </div>
 
   <!-- HERO SLIDER -->
   <section id="home" class="hero">
-    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80')"></div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="hero-overlay"></div>
 
     <div class="hero-text">
       <h1>Gestione Affitti Brevi a Milano e in tutta Italia</h1>
-      <p>Da Milano a Favignana, ci occupiamo della gestione completa dei tuoi immobili.  
-      Dalla SCIA al check-in: trasparenza, professionalità e rendimento.</p>
-      <a href="#servizi" class="btn">Scopri i nostri servizi</a>
+      <p>Dalla SCIA al check-in, dalla pulizia ai report: MN Property Management segue ogni dettaglio per valorizzare il tuo immobile con massima trasparenza.</p>
+      <a href="#servizi" class="btn">Scopri i servizi per proprietari</a>
+      <a href="richiedi-soggiorno.html" class="btn" style="margin-left:8px; background:#ffffff22; border:1px solid #fff;">Cerchi un alloggio?</a>
     </div>
   </section>
 
   <script>
-    let slides = document.querySelectorAll('.slide');
-    let index = 0;
+    // Slider semplice
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
     setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
     }, 4000);
+
+    // Hamburger menu mobile
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => {
+      navMobile.classList.toggle('show');
+    });
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMobile.classList.remove('show'));
+    });
   </script>
 
   <!-- SERVIZI -->
   <section id="servizi">
     <h2>I nostri servizi</h2>
-    <p>Con <strong>MN Property Management</strong> gestiamo affitti brevi, case vacanza e locazioni turistiche in tutta Italia.  
-    Ci occupiamo di ogni dettaglio: dalle pratiche burocratiche alle pulizie, fino alla gestione degli ospiti.</p>
-
+    <p>
+      Offriamo una gestione completa di affitti brevi, case vacanza e locazioni turistiche a
+      <strong>Milano, Favignana, Marsala, Pila, Robbio, Vercelli e Novara</strong>.  
+      Lavoriamo con contratti chiari, rendiconti mensili e supporto costante ai proprietari.
+    </p>
     <div class="grid">
-      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Check-in, pulizie, comunicazioni e report. Pensiamo a tutto noi.</p></div>
-      <div class="card"><i class="fa-solid fa-file-contract"></i><h3>SCIA e adempimenti</h3><p>Gestiamo iscrizioni, CIR e pratiche comunali in modo veloce e sicuro.</p></div>
-      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Ottimizzazione prezzi</h3><p>Analisi di mercato e tariffe dinamiche per massimizzare il rendimento.</p></div>
-      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie e manutenzione</h3><p>Staff professionale, ogni alloggio sempre perfetto per l’ospite.</p></div>
-      <div class="card"><i class="fa-solid fa-users"></i><h3>Assistenza ospiti</h3><p>Supporto 7/7, accoglienza e comunicazioni rapide per ogni soggiorno.</p></div>
-      <div class="card"><i class="fa-solid fa-lightbulb"></i><h3>Consulenza personalizzata</h3><p>Analizziamo il tuo immobile e creiamo un piano su misura.</p></div>
+      <div class="card">
+        <i class="fa-solid fa-key"></i>
+        <h3>Gestione completa</h3>
+        <p>Annunci, prenotazioni, check-in/out, pulizie, assistenza ospiti e comunicazioni obbligatorie.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-file-contract"></i>
+        <h3>SCIA, CIR & adempimenti</h3>
+        <p>Supporto su SCIA, codici identificativi, piattaforme regionali e obblighi verso Comune e Questura.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Pricing & rendimento</h3>
+        <p>Analisi mercato, tariffe dinamiche, strategia stagionale per massimizzare le entrate.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-broom"></i>
+        <h3>Pulizie professionali</h3>
+        <p>Team selezionati, standard elevati e controllo qualità ad ogni cambio ospite.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-users"></i>
+        <h3>Ospiti seguiti h24</h3>
+        <p>Comunicazioni rapide, supporto durante il soggiorno e gestione recensioni.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Consulenza dedicata</h3>
+        <p>Valutiamo insieme il tuo immobile e definiamo la soluzione più adatta ai tuoi obiettivi.</p>
+      </div>
     </div>
   </section>
 
   <!-- GALLERY -->
   <section id="gallery">
     <h2>Le nostre location</h2>
-    <p>Milano, Favignana, Marsala, Robbio, Pila, Vercelli e altre destinazioni uniche in Italia.</p>
-    <div class="grid gallery">
-      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Appartamento Milano">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Favignana mare">
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Marsala">
-      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Pila montagna">
+    <p>Gestiamo immobili in città, al mare e in montagna, mantenendo la stessa cura in ogni destinazione.</p>
+    <div class="gallery-wrap">
+      <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=900&q=80" alt="Milano">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Favignana">
+      <img src="https://images.unsplash.com/photo-1505692069463-249e1ac6c407?auto=format&fit=crop&w=900&q=80" alt="Marsala">
+      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Pila">
     </div>
   </section>
 
   <!-- CHI SONO -->
   <section id="chisono">
     <h2>Chi sono</h2>
-    <p>Mi chiamo <strong>Michael Natalizii</strong> e ho fondato <strong>MN Property Management</strong> con l’obiettivo di offrire un servizio trasparente e umano.  
-    Gestisco immobili in tutta Italia con la stessa attenzione che dedicherei alla mia casa.  
-    Il mio obiettivo: far crescere il valore del tuo immobile e la serenità dei tuoi ospiti.</p>
+    <p>
+      Sono <strong>Michael Natalizii</strong> e seguo personalmente ogni progetto di MN Property Management.
+      Credo nella trasparenza, nella comunicazione diretta e nella cura dei dettagli.
+      Il mio obiettivo è permettere ai proprietari di delegare tutto con fiducia, e agli ospiti di sentirsi sempre a casa.
+    </p>
+    <div class="social-personal">
+      Seguimi sui social per vedere come lavoro ogni giorno:
+      <a href="https://www.instagram.com/michael_287_/" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@michaelnatalizii" target="_blank">TikTok</a>
+    </div>
   </section>
 
   <!-- CONTATTI -->
   <section id="contatti">
     <h2>Contattaci</h2>
-    <p>Hai un immobile o desideri informazioni? Compila il modulo o scrivici su WhatsApp.</p>
+    <p>Vuoi una valutazione gratuita del tuo immobile o maggiori informazioni sui servizi?</p>
+
     <form action="https://api.web3forms.com/submit" method="POST" class="form" id="contactForm">
       <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
       <input type="text" name="name" placeholder="Il tuo nome" required>
       <input type="email" name="email" placeholder="La tua email" required>
-      <textarea name="message" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
+      <textarea name="message" rows="5" placeholder="Raccontaci del tuo immobile o della tua richiesta..." required></textarea>
       <button type="submit" class="btn">Invia richiesta</button>
+      <p id="formMessage" style="display:none; color:green; font-weight:600; margin-top:10px;">
+        ✅ Richiesta inviata. Ti risponderemo entro 24 ore.
+      </p>
     </form>
 
-    <p style="margin-top:20px;">
-      📞 <a href="tel:+393401424232">+39 340 142 4232</a>  
-      | ✉️ <a href="mailto:michaelnatalizii@gmail.com">michaelnatalizii@gmail.com</a>  
-      | 💬 <a href="https://wa.me/393401424232?text=Ciao! Vorrei informazioni.">WhatsApp</a>
-    </p>
+    <div class="contatti-diretti">
+      <p><strong>MN Property Management</strong></p>
+      <p>📍 Via Crosa 65, 28065 Cerano (NO)</p>
+      <p>📞 <a href="tel:+393401424232">+39 340 142 4232</a> | ✉️ <a href="mailto:michaelnatalizii@gmail.com">michaelnatalizii@gmail.com</a></p>
+      <div class="social-footer">
+        <a href="https://www.instagram.com/michael_287_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@michaelnatalizii" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 MN Property Management | P.IVA 02685790038</p>
     <p>Via Crosa 65, 28065 Cerano (NO)</p>
-    <p class="note">MN Property Management non è un’agenzia immobiliare ma un servizio di property management per affitti brevi e locazioni turistiche.  
-    <a href="privacy.html">Privacy & Cookie Policy</a> | <a href="termini.html">Termini d’Uso</a></p>
+    <p class="note">
+      MN Property Management non è un’agenzia immobiliare, ma un servizio di property management per affitti brevi e locazioni turistiche su incarico diretto dei proprietari.
+      <br>
+      <a href="privacy.html">Privacy & Cookie Policy</a> | <a href="termini.html">Termini d’Uso</a>
+    </p>
   </footer>
 
-  <!-- BANNER COOKIE E TERMINI -->
+  <!-- COOKIE + TERMINI BANNER -->
   <div class="cookie-banner" id="cookie-banner">
-    Questo sito utilizza cookie tecnici e accettando dichiari di aver letto la <a href="privacy.html" style="color:#d4af37;">Privacy Policy</a> e i <a href="termini.html" style="color:#d4af37;">Termini d’Uso</a>.
+    Questo sito utilizza solo cookie tecnici. Proseguendo accetti la nostra
+    <a href="privacy.html" target="_blank">Privacy & Cookie Policy</a> e i
+    <a href="termini.html" target="_blank">Termini d’Uso</a>.
     <button onclick="acceptCookies()">Accetta</button>
   </div>
 
+  <!-- SCRIPT FORM + COOKIE -->
   <script>
-    if (!localStorage.getItem('consentGiven')) {
+    // Web3Forms feedback
+    const contactForm = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMessage');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm)
+          });
+          if (res.ok) {
+            formMsg.style.display = 'block';
+            contactForm.reset();
+          }
+        } catch (err) {
+          console.error('Errore invio form', err);
+        }
+      });
+    }
+
+    // Cookie / Termini banner
+    if (!localStorage.getItem('mn_consent')) {
       document.getElementById('cookie-banner').style.display = 'block';
     }
     function acceptCookies() {
-      localStorage.setItem('consentGiven', 'true');
+      localStorage.setItem('mn_consent', 'true');
       document.getElementById('cookie-banner').style.display = 'none';
     }
   </script>
