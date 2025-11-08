@@ -4,30 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MN Property Management | Gestione Affitti Brevi Milano e Italia</title>
-  <meta name="description" content="MN Property Management offre servizi di gestione affitti brevi e case vacanza a Milano, Favignana, Marsala e in tutta Italia. Gestione completa: SCIA, check-in, pulizie, report e comunicazioni ospiti.">
+  <meta name="description" content="MN Property Management è specializzata nella gestione di affitti brevi, case vacanza e locazioni turistiche a Milano, Favignana, Marsala e in tutta Italia. Dalla SCIA al check-in, offriamo una gestione completa e trasparente.">
+  <meta name="keywords" content="gestione affitti brevi Milano, property management, case vacanza, affitti turistici, locazioni brevi, MN Property Management">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.ico">
   <script src="https://kit.fontawesome.com/6d65a2a48d.js" crossorigin="anonymous"></script>
 
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: #333; }
-    header { display: flex; justify-content: space-between; align-items: center; background: #002b5b; padding: 15px 10%; color: white; }
-    .logo { font-weight: bold; color: #d4af37; font-size: 1.4rem; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+    /* --- BASE --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; }
+    h1, h2, h3 { color: #002b5b; }
+
+    /* --- HEADER --- */
+    header { background: #002b5b; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; position: sticky; top: 0; z-index: 10; }
+    .logo { font-weight: 700; font-size: 1.4rem; color: #d4af37; }
+    nav ul { display: flex; list-style: none; gap: 25px; }
     nav a { color: white; text-decoration: none; font-weight: 500; }
     nav a:hover { color: #d4af37; }
-    .hero { background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; padding: 120px 10%; text-align: center; }
-    .btn { display: inline-block; background: #d4af37; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-    .btn:hover { background: #002b5b; }
+
+    /* --- HERO SLIDER --- */
+    .hero { position: relative; overflow: hidden; height: 85vh; }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s; }
+    .slide.active { opacity: 1; }
+    .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; background: rgba(0,0,0,0.4); padding: 30px 40px; border-radius: 12px; }
+    .hero-text h1 { font-size: 2rem; margin-bottom: 10px; }
+    .btn { display: inline-block; background: #d4af37; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; margin-top: 15px; transition: 0.3s; }
+    .btn:hover { background: #b68d24; }
+
+    /* --- SEZIONI --- */
     section { padding: 80px 10%; text-align: center; }
-    .servizi .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
-    .card { background: #f9f9f9; border-radius: 15px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+    p { margin-top: 15px; line-height: 1.7; }
+
+    /* --- SERVIZI --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
+    .card { background: #f8f8f8; padding: 25px; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
     .card i { font-size: 2rem; color: #d4af37; margin-bottom: 10px; }
+
+    /* --- GALLERY --- */
+    .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+
+    /* --- CONTATTI --- */
+    .form { max-width: 600px; margin: 0 auto; text-align: left; }
+    .form input, .form textarea { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    .form button { margin-top: 15px; }
+
+    /* --- FOOTER --- */
     footer { background: #002b5b; color: white; padding: 40px 10%; text-align: center; }
     footer a { color: #d4af37; text-decoration: none; }
-    footer .note { font-size: 0.8rem; margin-top: 15px; color: #ddd; }
-    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #002b5b; color: white; text-align: center; padding: 15px; font-size: 0.9rem; display: none; }
-    .cookie-banner button { background: #d4af37; color: white; border: none; padding: 8px 15px; border-radius: 20px; margin-left: 10px; cursor: pointer; }
+    footer .note { font-size: 0.85rem; color: #ccc; margin-top: 10px; }
+
+    /* --- BANNER COOKIE E TERMINI --- */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0,43,91,0.95); color: white; text-align: center; padding: 15px; font-size: 0.9rem; display: none; }
+    .cookie-banner button { background: #d4af37; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; margin-left: 10px; font-weight: 600; }
   </style>
 </head>
 
@@ -40,65 +69,113 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#chisono">Chi sono</a></li>
         <li><a href="#contatti">Contatti</a></li>
-        <li><a href="richiedi-soggiorno.html">Prenota alloggio</a></li>
+        <li><a href="richiedi-soggiorno.html">Prenota</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SLIDER -->
   <section id="home" class="hero">
-    <h1>Gestione Affitti Brevi a Milano e in Italia</h1>
-    <p>Gestiamo case vacanza e appartamenti turistici con professionalità, trasparenza e attenzione ai dettagli.</p>
-    <a href="#servizi" class="btn">Scopri i nostri servizi</a>
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80')"></div>
+
+    <div class="hero-text">
+      <h1>Gestione Affitti Brevi a Milano e in tutta Italia</h1>
+      <p>Da Milano a Favignana, ci occupiamo della gestione completa dei tuoi immobili.  
+      Dalla SCIA al check-in: trasparenza, professionalità e rendimento.</p>
+      <a href="#servizi" class="btn">Scopri i nostri servizi</a>
+    </div>
   </section>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+  </script>
 
   <!-- SERVIZI -->
   <section id="servizi">
     <h2>I nostri servizi</h2>
-    <p>Con <strong>MN Property Management</strong> gestiamo affitti brevi e locazioni turistiche in tutta Italia: Milano, Favignana, Marsala, Robbio, Pila, Vercelli e Novara.</p>
+    <p>Con <strong>MN Property Management</strong> gestiamo affitti brevi, case vacanza e locazioni turistiche in tutta Italia.  
+    Ci occupiamo di ogni dettaglio: dalle pratiche burocratiche alle pulizie, fino alla gestione degli ospiti.</p>
+
     <div class="grid">
-      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Ci occupiamo di prenotazioni, accoglienza, check-in, pulizie e burocrazia.</p></div>
-      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Report mensili</h3><p>Ogni mese ricevi un report chiaro e dettagliato sulle entrate.</p></div>
-      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie professionali</h3><p>Team specializzato per ogni cambio ospite.</p></div>
+      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Check-in, pulizie, comunicazioni e report. Pensiamo a tutto noi.</p></div>
+      <div class="card"><i class="fa-solid fa-file-contract"></i><h3>SCIA e adempimenti</h3><p>Gestiamo iscrizioni, CIR e pratiche comunali in modo veloce e sicuro.</p></div>
+      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Ottimizzazione prezzi</h3><p>Analisi di mercato e tariffe dinamiche per massimizzare il rendimento.</p></div>
+      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie e manutenzione</h3><p>Staff professionale, ogni alloggio sempre perfetto per l’ospite.</p></div>
+      <div class="card"><i class="fa-solid fa-users"></i><h3>Assistenza ospiti</h3><p>Supporto 7/7, accoglienza e comunicazioni rapide per ogni soggiorno.</p></div>
+      <div class="card"><i class="fa-solid fa-lightbulb"></i><h3>Consulenza personalizzata</h3><p>Analizziamo il tuo immobile e creiamo un piano su misura.</p></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Le nostre location</h2>
+    <p>Milano, Favignana, Marsala, Robbio, Pila, Vercelli e altre destinazioni uniche in Italia.</p>
+    <div class="grid gallery">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Appartamento Milano">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Favignana mare">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Marsala">
+      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Pila montagna">
     </div>
   </section>
 
   <!-- CHI SONO -->
   <section id="chisono">
     <h2>Chi sono</h2>
-    <p>Mi chiamo <strong>Michael Natalizii</strong> e ho fondato MN Property Management per offrire un servizio trasparente e professionale nella gestione degli affitti brevi. Lavoro in tutta Italia con dedizione e cura dei dettagli.</p>
+    <p>Mi chiamo <strong>Michael Natalizii</strong> e ho fondato <strong>MN Property Management</strong> con l’obiettivo di offrire un servizio trasparente e umano.  
+    Gestisco immobili in tutta Italia con la stessa attenzione che dedicherei alla mia casa.  
+    Il mio obiettivo: far crescere il valore del tuo immobile e la serenità dei tuoi ospiti.</p>
   </section>
 
   <!-- CONTATTI -->
   <section id="contatti">
     <h2>Contattaci</h2>
-    <p>Hai un immobile o desideri informazioni sui nostri servizi? Scrivici!</p>
-    <a href="mailto:michaelnatalizii@gmail.com" class="btn">Invia email</a>
-    <p>📞 <a href="tel:+393401424232">+39 340 142 4232</a></p>
+    <p>Hai un immobile o desideri informazioni? Compila il modulo o scrivici su WhatsApp.</p>
+    <form action="https://api.web3forms.com/submit" method="POST" class="form" id="contactForm">
+      <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
+      <input type="text" name="name" placeholder="Il tuo nome" required>
+      <input type="email" name="email" placeholder="La tua email" required>
+      <textarea name="message" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
+      <button type="submit" class="btn">Invia richiesta</button>
+    </form>
+
+    <p style="margin-top:20px;">
+      📞 <a href="tel:+393401424232">+39 340 142 4232</a>  
+      | ✉️ <a href="mailto:michaelnatalizii@gmail.com">michaelnatalizii@gmail.com</a>  
+      | 💬 <a href="https://wa.me/393401424232?text=Ciao! Vorrei informazioni.">WhatsApp</a>
+    </p>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 MN Property Management | P.IVA 02685790038</p>
     <p>Via Crosa 65, 28065 Cerano (NO)</p>
-    <p class="note">MN Property Management non è un’agenzia immobiliare, ma un servizio di property management che gestisce affitti brevi e locazioni turistiche per conto dei proprietari.</p>
-    <p><a href="privacy.html">Privacy & Cookie Policy</a></p>
+    <p class="note">MN Property Management non è un’agenzia immobiliare ma un servizio di property management per affitti brevi e locazioni turistiche.  
+    <a href="privacy.html">Privacy & Cookie Policy</a> | <a href="termini.html">Termini d’Uso</a></p>
   </footer>
 
-  <!-- COOKIE BANNER -->
+  <!-- BANNER COOKIE E TERMINI -->
   <div class="cookie-banner" id="cookie-banner">
-    Questo sito utilizza cookie tecnici per migliorare la tua esperienza. Nessun tracciamento.
-    <button onclick="acceptCookies()">OK</button>
+    Questo sito utilizza cookie tecnici e accettando dichiari di aver letto la <a href="privacy.html" style="color:#d4af37;">Privacy Policy</a> e i <a href="termini.html" style="color:#d4af37;">Termini d’Uso</a>.
+    <button onclick="acceptCookies()">Accetta</button>
   </div>
 
   <script>
-    if (!localStorage.getItem('cookiesAccepted')) {
+    if (!localStorage.getItem('consentGiven')) {
       document.getElementById('cookie-banner').style.display = 'block';
     }
     function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
+      localStorage.setItem('consentGiven', 'true');
       document.getElementById('cookie-banner').style.display = 'none';
     }
   </script>
