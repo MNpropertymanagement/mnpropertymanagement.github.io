@@ -4,246 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MN Property Management | Gestione Affitti Brevi Milano e Italia</title>
-  <meta name="description" content="MN Property Management offre servizi professionali di gestione affitti brevi e case vacanza a Milano, Favignana, Marsala e in tutta Italia. Gestione completa per proprietari: SCIA, check-in, pulizie, report e comunicazioni ospiti.">
+  <meta name="description" content="MN Property Management offre servizi di gestione affitti brevi e case vacanza a Milano, Favignana, Marsala e in tutta Italia. Gestione completa: SCIA, check-in, pulizie, report e comunicazioni ospiti.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.ico">
   <script src="https://kit.fontawesome.com/6d65a2a48d.js" crossorigin="anonymous"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center; background: #002b5b; padding: 15px 10%; color: white; }
+    .logo { font-weight: bold; color: #d4af37; font-size: 1.4rem; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+    nav a { color: white; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #d4af37; }
+    .hero { background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; padding: 120px 10%; text-align: center; }
+    .btn { display: inline-block; background: #d4af37; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+    .btn:hover { background: #002b5b; }
+    section { padding: 80px 10%; text-align: center; }
+    .servizi .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 40px; }
+    .card { background: #f9f9f9; border-radius: 15px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+    .card i { font-size: 2rem; color: #d4af37; margin-bottom: 10px; }
+    footer { background: #002b5b; color: white; padding: 40px 10%; text-align: center; }
+    footer a { color: #d4af37; text-decoration: none; }
+    footer .note { font-size: 0.8rem; margin-top: 15px; color: #ddd; }
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #002b5b; color: white; text-align: center; padding: 15px; font-size: 0.9rem; display: none; }
+    .cookie-banner button { background: #d4af37; color: white; border: none; padding: 8px 15px; border-radius: 20px; margin-left: 10px; cursor: pointer; }
+  </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <span class="mn">MN</span> <span class="sub">Property Management</span>
-    </div>
-
-    <nav class="nav">
+  <header>
+    <div class="logo">MN Property Management</div>
+    <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#consulenza">Consulenza</a></li>
+        <li><a href="#chisono">Chi sono</a></li>
         <li><a href="#contatti">Contatti</a></li>
         <li><a href="richiedi-soggiorno.html">Prenota alloggio</a></li>
       </ul>
     </nav>
   </header>
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MN Property Management | Gestione Affitti Brevi Milano e Italia</title>
-  <meta name="description" content="MN Property Management offre servizi professionali di gestione affitti brevi e case vacanza a Milano, Favignana, Marsala e in tutta Italia. Gestione completa per proprietari: SCIA, check-in, pulizie, report e comunicazioni ospiti.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.ico">
-  <script src="https://kit.fontawesome.com/6d65a2a48d.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <span class="mn">MN</span> <span class="sub">Property Management</span>
-    </div>
-    <nav class="nav">
-      <a href="#servizi">Servizi</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#chisono">Chi sono</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-  </header>
-
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Gestione Affitti Brevi a Milano e in Italia</h1>
-      <p>Gestiamo case vacanza e appartamenti turistici con professionalità, trasparenza e attenzione ai dettagli. Dalla SCIA al check-in, ogni proprietario ha un servizio su misura.</p>
-      <a href="#servizi" class="btn">Scopri i nostri servizi</a>
-    </div>
+  <section id="home" class="hero">
+    <h1>Gestione Affitti Brevi a Milano e in Italia</h1>
+    <p>Gestiamo case vacanza e appartamenti turistici con professionalità, trasparenza e attenzione ai dettagli.</p>
+    <a href="#servizi" class="btn">Scopri i nostri servizi</a>
   </section>
 
   <!-- SERVIZI -->
-  <section id="servizi" class="servizi">
+  <section id="servizi">
     <h2>I nostri servizi</h2>
-    <p>
-  Con <strong>MN Property Management</strong> gestiamo affitti brevi, case vacanza e locazioni turistiche a <strong>Milano, Favignana, Marsala</strong> e in altre città italiane.  
-  Offriamo servizi completi: pubblicazione annunci su Booking, Airbnb e altri portali, gestione ospiti, pulizie professionali, assistenza fiscale e pratiche burocratiche come la <strong>SCIA</strong> e le comunicazioni alla <strong>Questura</strong>.  
-  Il nostro obiettivo è massimizzare il rendimento del tuo immobile, senza pensieri.
-</p>
-    
+    <p>Con <strong>MN Property Management</strong> gestiamo affitti brevi e locazioni turistiche in tutta Italia: Milano, Favignana, Marsala, Robbio, Pila, Vercelli e Novara.</p>
     <div class="grid">
-      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Ci occupiamo di tutto: prenotazioni, accoglienza, check-in/check-out, pulizie e comunicazioni agli ospiti. Tu devi solo incassare.</p></div>
-      <div class="card"><i class="fa-solid fa-file-signature"></i><h3>SCIA e pratiche</h3><p>Gestiamo le pratiche burocratiche necessarie per la locazione turistica, inclusa la registrazione al Comune e la SCIA.</p></div>
-      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Rendiconti mensili</h3><p>Ricevi ogni mese un report dettagliato delle entrate, delle spese e del guadagno netto, con la massima trasparenza.</p></div>
-      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie professionali</h3><p>Ogni appartamento viene sanificato e preparato con cura da personale qualificato, per offrire un’esperienza impeccabile agli ospiti.</p></div>
-      <div class="card"><i class="fa-solid fa-comments"></i><h3>Comunicazioni ospiti</h3><p>Gestiamo tutte le comunicazioni con gli ospiti prima, durante e dopo il soggiorno, garantendo risposte rapide e professionali.</p></div>
-      <div class="card"><i class="fa-solid fa-lightbulb"></i><h3>Consulenza e ottimizzazione</h3><p>Analizziamo il potenziale del tuo immobile, miglioriamo l’annuncio e ottimizziamo i prezzi per massimizzare il rendimento.</p></div>
-    </div>
-  </section>
-<section id="prenota" class="prenota" style="background:#f9f9f9; padding:60px 0; text-align:center;">
-  <div class="container">
-    <h2>🧳 Cerchi un alloggio con MN Property?</h2>
-    <p>Scopri le nostre strutture in tutta Italia: Milano, Favignana, Marsala, Robbio, Pila, Vercelli e Novara.</p>
-    <a href="richiedi-soggiorno.html" class="btn" style="background-color:#d4af37; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight:600;">
-      Prenota alloggio
-    </a>
-  </div>
-</section>
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#servizi">Servizi</a></li>
-  <li><a href="#consulenza">Consulenza</a></li>
-  <li><a href="#contatti">Contatti</a></li>
-  <li><a href="richiedi-soggiorno.html">Prenota alloggio</a></li>
-</ul>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery">
-    <h2>Le nostre location</h2>
-    <p>Gestiamo immobili e case vacanza in diverse località italiane, offrendo a ogni proprietario la stessa cura e professionalità.</p>
-    <div class="slider">
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1590490359683-3318a3e94f1b?auto=format&fit=crop&w=1600&q=80')"></div>
-      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80')"></div>
+      <div class="card"><i class="fa-solid fa-key"></i><h3>Gestione completa</h3><p>Ci occupiamo di prenotazioni, accoglienza, check-in, pulizie e burocrazia.</p></div>
+      <div class="card"><i class="fa-solid fa-chart-line"></i><h3>Report mensili</h3><p>Ogni mese ricevi un report chiaro e dettagliato sulle entrate.</p></div>
+      <div class="card"><i class="fa-solid fa-broom"></i><h3>Pulizie professionali</h3><p>Team specializzato per ogni cambio ospite.</p></div>
     </div>
   </section>
 
   <!-- CHI SONO -->
-  <section id="chisono" class="chisono">
+  <section id="chisono">
     <h2>Chi sono</h2>
-    <h2>Perché scegliere MN Property Management</h2>
-<p>
-  Dietro ogni gestione c’è una persona vera. Mi chiamo <strong>Michael Natalizii</strong> e ho fondato <strong>MN Property Management</strong> per offrire un servizio umano, trasparente e professionale.  
-  Dopo anni di esperienza diretta nel settore, gestisco appartamenti turistici in tutta Italia — da <strong>Milano</strong> a <strong>Favignana</strong>, fino alla <strong>Valle d’Aosta</strong> — occupandomi di tutto: check-in, pulizie, reportistica e burocrazia.  
-  Ogni ospite deve sentirsi a casa, ogni proprietario deve sentirsi sereno.
-</p>
-
+    <p>Mi chiamo <strong>Michael Natalizii</strong> e ho fondato MN Property Management per offrire un servizio trasparente e professionale nella gestione degli affitti brevi. Lavoro in tutta Italia con dedizione e cura dei dettagli.</p>
   </section>
-<!-- CONSULENZA -->
-<!-- FORM CONSULENZA WEB3FORMS -->
-<form action="https://api.web3forms.com/submit" method="POST" class="form" id="consultForm">
-  <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
 
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Il tuo nome" required>
-    <input type="email" name="email" placeholder="La tua email" required>
-  </div>
-
-  <textarea name="message" rows="5" placeholder="Raccontaci del tuo immobile o delle tue esigenze..." required></textarea>
-  <button type="submit" class="btn">Richiedi consulenza</button>
-
-  <p id="consultMessage" style="display:none; margin-top:15px; color:green; font-weight:600;">
-    ✅ Richiesta inviata! Ti risponderemo entro 24 ore.
-  </p>
-</form>
-
-<script>
-  const consultForm = document.getElementById('consultForm');
-  const consultMessage = document.getElementById('consultMessage');
-  consultForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    fetch(consultForm.action, {
-      method: consultForm.method,
-      body: new FormData(consultForm)
-    }).then(() => {
-      consultMessage.style.display = 'block';
-      consultForm.reset();
-    }).catch(error => console.error('Errore invio form:', error));
-  });
-</script>
-A
-<section id="contatti" class="contatti">
-  <h2>Contattaci</h2>
-  <p>Hai un immobile o vuoi una valutazione gratuita del tuo appartamento?  
-  Compila il modulo qui sotto o scrivici direttamente su WhatsApp. Ti risponderemo entro 24 ore.</p>
-
-  <!-- FORM -->
- <!-- FORM CONTATTI WEB3FORMS -->
-<form action="https://api.web3forms.com/submit" method="POST" class="form" id="contactForm">
-  <!-- Chiave personale Web3Forms -->
-  <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
-
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Il tuo nome" required>
-    <input type="email" name="email" placeholder="La tua email" required>
-  </div>
-
-  <input type="text" name="phone" placeholder="Il tuo numero di telefono">
-  <textarea name="message" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
-
-  <button type="submit" class="btn">Invia richiesta</button>
-
-  <!-- Messaggio di conferma -->
-  <p id="formMessage" style="display:none; margin-top:15px; color:green; font-weight:600;">
-    ✅ Grazie! Ti contatteremo entro 24 ore.
-  </p>
-</form>
-
-<!-- Script per mostrare messaggio senza ricaricare pagina -->
-<script>
-  const form = document.getElementById('contactForm');
-  const message = document.getElementById('formMessage');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form)
-    }).then(() => {
-      message.style.display = 'block';
-      form.reset();
-    }).catch(error => console.error('Errore invio form:', error));
-  });
-</script>
-
-
-  <!-- CONTATTI DIRETTI -->
-  <div class="contatti-diretti">
-    <p><i class="fa-solid fa-building"></i>  
-      <strong>MN Property Management</strong><br>
-      Via Crosa 65, 28065 Cerano (NO)</p>
-
-    <p><i class="fa-solid fa-envelope"></i>  
-      <a href="mailto:michaelnatalizii@gmail.com">michaelnatalizii@gmail.com</a></p>
-
-    <p><i class="fa-solid fa-phone"></i>  
-      <a href="tel:+393401424232">+39 340 142 4232</a></p>
-
-    <p><i class="fa-brands fa-whatsapp"></i>  
-      <a href="https://wa.me/393401424232?text=Ciao! Vorrei informazioni sui vostri servizi.">Scrivici su WhatsApp</a></p>
-  </div>
-
-  <!-- SOCIAL -->
-  <div class="social">
-    <h3>Seguici sui social</h3>
-    <a href="https://instagram.com/mnproperty.management" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://facebook.com/mnpropertymanagement" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://tiktok.com/@mnproperty.it" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="https://linkedin.com/company/mnpropertymanagement" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://youtube.com/@mnpropertymanagement" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-  </div>
-</section>
-
-
-  <!-- MAPPA -->
- 
-</section>
-
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <h2>Contattaci</h2>
+    <p>Hai un immobile o desideri informazioni sui nostri servizi? Scrivici!</p>
+    <a href="mailto:michaelnatalizii@gmail.com" class="btn">Invia email</a>
+    <p>📞 <a href="tel:+393401424232">+39 340 142 4232</a></p>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-  <p>© 2025 MN Property Management | P.IVA 02685790038</p>
-  <p>Sede legale: Via Crosa 65, 28065 Cerano (NO)</p>
-  <p class="note">
-    MN Property Management non è un’agenzia immobiliare, ma un servizio di property management che si occupa di gestione e assistenza per affitti brevi e locazioni turistiche.  
-    Non intermedia la vendita o la locazione di immobili, ma opera come gestore su incarico diretto dei proprietari.
-  </p>
-</footer>
+    <p>© 2025 MN Property Management | P.IVA 02685790038</p>
+    <p>Via Crosa 65, 28065 Cerano (NO)</p>
+    <p class="note">MN Property Management non è un’agenzia immobiliare, ma un servizio di property management che gestisce affitti brevi e locazioni turistiche per conto dei proprietari.</p>
+    <p><a href="privacy.html">Privacy & Cookie Policy</a></p>
+  </footer>
 
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookie-banner">
+    Questo sito utilizza cookie tecnici per migliorare la tua esperienza. Nessun tracciamento.
+    <button onclick="acceptCookies()">OK</button>
+  </div>
 
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/393401424232?text=Ciao! Vorrei informazioni sui vostri servizi di gestione affitti brevi." class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <script>
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
