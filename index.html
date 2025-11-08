@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MN Property Management | Gestione Affitti Brevi</title>
+  <title>MN Property Management | Gestione Affitti Brevi a Milano e in Italia</title>
 
-  <meta name="description" content="MN Property Management offre gestione professionale di affitti brevi e case vacanza a Milano, Favignana, Marsala, Pila, Robbio, Vercelli e Novara. Valutazione gratuita, gestione completa, zero pensieri per i proprietari.">
-  <meta name="keywords" content="gestione affitti brevi, property management, affitti brevi Milano, gestione case vacanza, MN Property Management, Michael Natalizii">
+  <meta name="description" content="MN Property Management offre gestione professionale di affitti brevi e case vacanza a Milano, Favignana, Marsala, Pila, Robbio, Vercelli e Novara. Valutazione gratuita, gestione completa, zero pensieri per i proprietari e soluzioni per chi cerca alloggio.">
+  <meta name="keywords" content="gestione affitti brevi, affitti brevi Milano, property management, case vacanza, locazioni turistiche, MN Property Management, Michael Natalizii">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon-mn.png">
@@ -55,19 +55,66 @@
       letter-spacing: .6px;
     }
 
-    .top-right {
+    nav ul {
+      list-style:none;
       display:flex;
+      gap:22px;
+      font-size:.85rem;
+    }
+
+    nav a {
+      color:#fff;
+      font-weight:500;
+    }
+
+    nav a:hover {
+      color:var(--oro);
+    }
+
+    .hamburger {
+      display:none;
+      flex-direction:column;
+      gap:4px;
+      cursor:pointer;
+    }
+
+    .hamburger span {
+      width:22px;
+      height:2px;
+      background:#fff;
+      border-radius:2px;
+    }
+
+    .nav-mobile {
+      display:none;
+      flex-direction:column;
+      background:rgba(0,43,91,0.98);
+      padding:10px 7% 14px;
+      gap:8px;
+    }
+
+    .nav-mobile a {
+      color:#fff;
+      font-size:.9rem;
+    }
+
+    .nav-mobile a:hover {
+      color:var(--oro);
+    }
+
+    .top-actions {
+      display:flex;
+      gap:12px;
       align-items:center;
-      gap:16px;
       font-size:.8rem;
     }
 
-    .top-right a {
+    .top-actions a {
       color:#fff;
       opacity:0.9;
     }
 
-    .top-right a:hover {
+    .top-actions a:hover {
       color:var(--oro);
     }
 
@@ -86,7 +133,7 @@
       flex-wrap:wrap;
       padding:40px 7% 30px;
       background:
-        linear-gradient(135deg, rgba(0,43,91,0.9), rgba(0,43,91,0.4)),
+        linear-gradient(135deg, rgba(0,43,91,0.9), rgba(0,43,91,0.45)),
         url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       color:#fff;
       gap:30px;
@@ -175,14 +222,15 @@
     }
 
     .form-box h2 {
-      font-size:1.1rem;
-      margin-bottom:6px;
+      font-size:1.05rem;
+      margin-bottom:4px;
       color:var(--blu);
     }
 
-    .form-row {
-      display:flex;
-      gap:8px;
+    .form-box p {
+      font-size:.78rem;
+      margin-bottom:6px;
+      color:#555;
     }
 
     .form-box label {
@@ -201,6 +249,11 @@
       border:1px solid #d0d0d0;
       font-size:.8rem;
       font-family:inherit;
+    }
+
+    .form-row {
+      display:flex;
+      gap:8px;
     }
 
     .form-box textarea {
@@ -243,9 +296,10 @@
       font-weight:600;
     }
 
-    /* PERCHÉ MN */
+    /* SEZIONI GENERICHE */
     .section {
       padding:40px 7% 30px;
+      text-align:left;
     }
 
     .section h2 {
@@ -257,7 +311,7 @@
     .section-sub {
       font-size:.9rem;
       color:#555;
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .benefit-grid {
@@ -270,13 +324,7 @@
       background:var(--bg);
       border-radius:var(--radius);
       padding:14px 14px 12px;
-      text-align:left;
       font-size:.85rem;
-    }
-
-    .benefit i {
-      color:var(--oro);
-      margin-right:6px;
     }
 
     .benefit h3 {
@@ -286,79 +334,184 @@
       font-weight:600;
     }
 
-    /* STEP */
-    .steps {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-      gap:14px;
-      margin-top:16px;
-      font-size:.83rem;
-    }
-
-    .step {
-      border-radius:var(--radius);
-      padding:10px 12px;
-      border:1px solid #e0e0e0;
-      text-align:left;
-      background:#fff;
-    }
-
-    .step span {
-      display:inline-block;
-      width:20px;
-      height:20px;
-      border-radius:50%;
-      background:var(--blu);
-      color:#fff;
-      font-size:.7rem;
-      text-align:center;
-      line-height:20px;
+    .benefit i {
+      color:var(--oro);
       margin-right:6px;
     }
 
-    /* CTA INTERMEDIA */
-    .strip-cta {
-      margin-top:26px;
-      padding:14px 16px;
-      border-radius:var(--radius);
-      background:linear-gradient(to right, var(--blu), #014b92);
-      color:#fff;
-      font-size:.85rem;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+    /* TROVA ALLOGGIO */
+    .stay-section {
+      padding:40px 7% 35px;
+      background:#f7f7f7;
     }
 
-    .strip-cta a {
-      background:var(--oro);
+    .stay-header {
+      text-align:left;
+      margin-bottom:18px;
+    }
+
+    .stay-header h2 {
+      font-size:1.35rem;
+      color:var(--blu);
+      margin-bottom:4px;
+    }
+
+    .stay-header p {
+      font-size:.88rem;
+      color:#555;
+    }
+
+    .stay-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-bottom:16px;
+    }
+
+    .stay-card {
+      background:#fff;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 6px 14px rgba(0,0,0,0.06);
+      font-size:.8rem;
+    }
+
+    .stay-card img {
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .stay-card div {
+      padding:8px 10px 9px;
+    }
+
+    .stay-card strong {
+      display:block;
+      color:var(--blu);
+      margin-bottom:2px;
+      font-size:.85rem;
+    }
+
+    .stay-card span {
+      font-size:.78rem;
+      color:#555;
+    }
+
+    .stay-layout {
+      display:grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(230px, 1.5fr);
+      gap:18px;
+      align-items:flex-start;
+    }
+
+    .stay-form {
+      background:#fff;
+      padding:12px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      font-size:.8rem;
+    }
+
+    .stay-form h3 {
+      font-size:.98rem;
+      color:var(--blu);
+      margin-bottom:4px;
+    }
+
+    .stay-form input,
+    .stay-form textarea,
+    .stay-form select {
+      width:100%;
+      padding:7px 9px;
+      margin-top:6px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      font-size:.78rem;
+      font-family:inherit;
+    }
+
+    .stay-form button {
+      margin-top:8px;
+      width:100%;
+      background:var(--blu);
       color:#fff;
-      padding:7px 16px;
+      padding:9px;
       border-radius:20px;
+      border:none;
+      cursor:pointer;
       font-weight:600;
       font-size:.8rem;
     }
 
-    /* SEZIONE CONTATTI FINALE */
+    .stay-form button:hover {
+      background:#001933;
+    }
+
+    #stayMessage {
+      display:none;
+      margin-top:4px;
+      font-size:.75rem;
+      color:green;
+      font-weight:600;
+      text-align:center;
+    }
+
+    .stay-link-all {
+      margin-top:8px;
+      font-size:.8rem;
+    }
+
+    .stay-link-all a {
+      color:var(--blu);
+      font-weight:600;
+    }
+
+    /* OTA STRIP */
+    .ota-strip {
+      padding:18px 7% 16px;
+      background:#ffffff;
+      font-size:.78rem;
+      color:#777;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:14px;
+      border-top:1px solid #eee;
+      border-bottom:1px solid #eee;
+    }
+
+    .ota-label {
+      font-weight:500;
+      color:#555;
+    }
+
+    .ota-icons i {
+      font-size:1.3rem;
+      margin-right:10px;
+      color:#004f9e;
+    }
+
+    .ota-icons .airbnb {color:#ff5a5f;}
+    .ota-icons .trip {color:#00a680;}
+    .ota-icons .expedia {color:#002b5b;}
+
+    /* CONTATTI FINALI */
     .contact-final {
       padding:35px 7% 40px;
-      background:#f7f7f7;
+      background:#f5f5f7;
       display:grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(220px, 1.3fr);
+      grid-template-columns: minmax(0, 2.1fr) minmax(230px, 1.4fr);
       gap:22px;
       align-items:flex-start;
       font-size:.85rem;
     }
 
     .contact-final h2 {
-      font-size:1.35rem;
+      font-size:1.3rem;
       color:var(--blu);
       margin-bottom:4px;
-    }
-
-    .contact-final p {
-      margin-bottom:8px;
     }
 
     .contact-list p i {
@@ -381,12 +534,12 @@
       background:#fff;
       padding:14px;
       border-radius:var(--radius);
-      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
     }
 
     .contact-form-small h3 {
-      font-size:1rem;
-      margin-bottom:6px;
+      font-size:.98rem;
+      margin-bottom:4px;
       color:var(--blu);
     }
 
@@ -397,7 +550,7 @@
       margin-top:6px;
       border-radius:8px;
       border:1px solid #ddd;
-      font-size:.8rem;
+      font-size:.78rem;
       font-family:inherit;
     }
 
@@ -410,7 +563,7 @@
       padding:9px;
       border-radius:20px;
       font-weight:600;
-      font-size:.82rem;
+      font-size:.8rem;
       cursor:pointer;
     }
 
@@ -442,32 +595,56 @@
       line-height:1.5;
     }
 
+    .footer-social {
+      margin-top:6px;
+    }
+
+    .footer-social a {
+      margin:0 6px;
+      color:#fff;
+      font-size:1.1rem;
+    }
+
+    .footer-social a:hover {
+      color:var(--oro);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       header {
         padding:8px 5%;
       }
+
+      nav ul {
+        display:none;
+      }
+
+      .hamburger {
+        display:flex;
+      }
+
       .hero {
         padding:26px 5% 22px;
         flex-direction:column;
       }
+
+      .hero-left,
       .hero-right {
-        order:2;
         max-width:100%;
       }
-      .hero-left {
-        order:1;
-        max-width:100%;
-      }
+
       .section,
-      .contact-final {
+      .stay-section,
+      .ota-strip,
+      .contact-final,
+      footer {
         padding-left:5%;
         padding-right:5%;
       }
+
       .contact-final {
         grid-template-columns:1fr;
       }
-      .top-right span {display:none;}
     }
   </style>
 </head>
@@ -476,47 +653,61 @@
   <!-- HEADER -->
   <header>
     <div class="logo-text">MN Property Management</div>
-    <div class="top-right">
-      <span>Gestione affitti brevi in tutta Italia</span>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#stay">Trova alloggio</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="top-actions">
       <a href="tel:+393401424232"><i class="fa-solid fa-phone"></i> +39 340 142 4232</a>
       <a href="#richiesta" class="btn-mini">Valutazione gratuita</a>
     </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </header>
 
-  <!-- HERO + FORM PRINCIPALE -->
-  <section class="hero">
-    <!-- Testo -->
+  <!-- NAV MOBILE -->
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#home">Home</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#stay">Trova alloggio</a>
+    <a href="#contatti">Contatti</a>
+    <a href="#richiesta">Valutazione gratuita</a>
+  </div>
+
+  <!-- HERO + FORM PROPRIETARI -->
+  <section class="hero" id="home">
     <div class="hero-left">
-      <h1>Affida il tuo immobile a chi lo gestisce come se fosse suo.</h1>
-      <p>MN Property Management ti segue dalla pratica SCIA alla pubblicazione sugli OTA, dai check-in alle pulizie, con rendiconti chiari e zero vincoli pesanti.</p>
+      <h1>Gestione Affitti Brevi a Milano e in tutta Italia.</h1>
+      <p>Affida il tuo immobile a chi lo gestisce come se fosse suo. Dalla SCIA ai portali online, dai check-in alle pulizie: gestione completa, trasparente e senza pensieri.</p>
 
       <div class="hero-badges">
-        <span><i class="fa-solid fa-chart-line"></i>Massimizzazione del rendimento</span>
-        <span><i class="fa-solid fa-shield-halved"></i>Gestione sicura e controllata</span>
-        <span><i class="fa-solid fa-file-pen"></i>Burocrazia seguita per te</span>
+        <span><i class="fa-solid fa-chart-line"></i> Massimizzazione rendimenti</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Selezione ospiti e tutela</span>
+        <span><i class="fa-solid fa-file-pen"></i> Pratiche gestite per te</span>
       </div>
 
       <div class="hero-cta">
-        <a href="#richiesta" class="btn-primary">Richiedi una valutazione gratuita</a>
-        <a href="https://wa.me/393401424232?text=Ciao%2C+vorrei+informazioni+sulla+gestione+affitti+brevi." class="btn-outline" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>Scrivimi su WhatsApp
-        </a>
+        <a href="#richiesta" class="btn-primary">Sono un proprietario, voglio info</a>
+        <a href="#stay" class="btn-outline"><i class="fa-solid fa-bed"></i> Cerco un alloggio</a>
       </div>
 
       <div class="hero-note">
-        Nessun costo fisso di setup. Guadagni quando il tuo immobile guadagna.
+        Nessun costo fisso di attivazione. Guadagni solo quando il tuo immobile lavora.
       </div>
     </div>
 
-    <!-- Form -->
     <div class="hero-right" id="richiesta">
       <div class="form-box">
         <h2>Richiedi la gestione del tuo immobile</h2>
-        <p>Compila il form: ti risponderò personalmente.</p>
-
+        <p>Compila il form, ti risponderò personalmente.</p>
         <form id="mainRequestForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
-          <input type="hidden" name="from_page" value="Richiesta MN Property Management">
+          <input type="hidden" name="from_page" value="Richiesta gestione proprietario - Home">
 
           <label>Nome e Cognome*</label>
           <input type="text" name="name" required>
@@ -552,7 +743,7 @@
           <textarea name="messaggio" required></textarea>
 
           <div class="form-consent">
-            Inviando questo modulo dichiari di aver letto la
+            Inviando il modulo dichiari di aver letto la
             <a href="privacy.html" target="_blank">Privacy Policy</a>.
           </div>
 
@@ -564,47 +755,116 @@
   </section>
 
   <!-- PERCHÉ MN -->
-  <section class="section">
+  <section class="section" id="servizi">
     <h2>Perché scegliere MN Property Management</h2>
-    <p class="section-sub">Un unico referente, gestione completa, approccio sartoriale. Non sei un numero, il tuo immobile viene seguito personalmente.</p>
+    <p class="section-sub">Un unico referente, gestione sartoriale per ogni immobile. Nessun pacchetto standard, ma una strategia costruita su misura.</p>
 
     <div class="benefit-grid">
       <div class="benefit">
-        <h3><i class="fa-solid fa-chart-line"></i>Massimizzazione dei guadagni</h3>
-        <p>Pianificazione tariffe, analisi domanda, gestione calendarizzata su più portali per aumentare l’occupazione senza svendere.</p>
+        <h3><i class="fa-solid fa-chart-line"></i> Guadagni ottimizzati</h3>
+        <p>Analisi del mercato, tariffe dinamiche e presenza sui principali portali per aumentare l’occupazione senza svendere.</p>
       </div>
       <div class="benefit">
-        <h3><i class="fa-solid fa-hand-holding-heart"></i>Zero pensieri operativi</h3>
-        <p>Check-in, check-out, pulizie, fornitura biancheria, gestione ospiti: tutto incluso nella gestione.</p>
+        <h3><i class="fa-solid fa-hand-holding-heart"></i> Zero pensieri operativi</h3>
+        <p>Check-in/check-out, gestione chiavi, pulizie, biancheria, assistenza ospiti. Pensiamo a tutto noi.</p>
       </div>
       <div class="benefit">
-        <h3><i class="fa-solid fa-file-shield"></i>Burocrazia seguita</h3>
-        <p>Supporto per SCIA, codici identificativi, Alloggiati Web, imposta di soggiorno e adempimenti locali.</p>
+        <h3><i class="fa-solid fa-file-shield"></i> Burocrazia seguita</h3>
+        <p>Supporto per SCIA, codici identificativi, Alloggiati Web, imposta di soggiorno e adempimenti comunali.</p>
       </div>
       <div class="benefit">
-        <h3><i class="fa-solid fa-eye"></i>Trasparenza totale</h3>
-        <p>Report mensili chiari con entrate, costi concordati e quota del proprietario. Nessun vincolo capestro.</p>
+        <h3><i class="fa-solid fa-eye"></i> Trasparenza totale</h3>
+        <p>Report chiari, condivisione dati, nessun costo nascosto. Il proprietario sa sempre quanto e come incassa.</p>
       </div>
-    </div>
-
-    <div class="steps">
-      <div class="step"><span>1</span>Compili il modulo o mi contatti su WhatsApp.</div>
-      <div class="step"><span>2</span>Analizzo il potenziale del tuo immobile e ti propongo una strategia.</div>
-      <div class="step"><span>3</span>Firmiamo un incarico chiaro e senza sorprese.</div>
-      <div class="step"><span>4</span>Mi occupo di tutto: tu vedi i risultati.</div>
-    </div>
-
-    <div class="strip-cta">
-      <div>Vuoi capire subito quanto può rendere il tuo appartamento?</div>
-      <a href="#richiesta">Richiedi una valutazione gratuita</a>
     </div>
   </section>
 
+  <!-- TROVA IL TUO ALLOGGIO -->
+  <section class="stay-section" id="stay">
+    <div class="stay-header">
+      <h2>Cerchi un alloggio per un soggiorno breve?</h2>
+      <p>Collaboriamo con proprietari selezionati in diverse città italiane. Raccontaci cosa cerchi e ti proponiamo la soluzione più adatta.</p>
+    </div>
+
+    <div class="stay-layout">
+      <!-- Cards città -->
+      <div>
+        <div class="stay-grid">
+          <div class="stay-card">
+            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Milano">
+            <div><strong>Milano</strong><span>Business, eventi, soggiorni brevi in città.</span></div>
+          </div>
+          <div class="stay-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Favignana">
+            <div><strong>Favignana</strong><span>Case vacanza vicino al mare.</span></div>
+          </div>
+          <div class="stay-card">
+            <img src="https://images.unsplash.com/photo-1589712238532-6b2883f47d05?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Marsala">
+            <div><strong>Marsala</strong><span>Tramonti, saline, wine experience.</span></div>
+          </div>
+          <div class="stay-card">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Pila">
+            <div><strong>Pila</strong><span>Montagna, neve, natura.</span></div>
+          </div>
+          <div class="stay-card">
+            <img src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Robbio / Vercelli / Novara">
+            <div><strong>Robbio · Vercelli · Novara</strong><span>Soggiorni lavoro e medio termine.</span></div>
+          </div>
+        </div>
+        <div class="stay-link-all">
+          Vuoi vedere tutte le soluzioni disponibili?
+          <a href="richiedi-soggiorno.html">Vai al modulo dedicato ospiti</a>.
+        </div>
+      </div>
+
+      <!-- Form ospiti -->
+      <div class="stay-form">
+        <h3>Richiedi un alloggio</h3>
+        <form id="stayForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
+          <input type="hidden" name="from_page" value="Richiesta alloggio - Home">
+
+          <input type="text" name="name" placeholder="Nome e cognome*" required>
+          <input type="email" name="email" placeholder="Email*" required>
+          <input type="text" name="phone" placeholder="Telefono (opzionale)">
+          <select name="citta" required>
+            <option value="">Dove vuoi soggiornare?*</option>
+            <option>Milano</option>
+            <option>Favignana</option>
+            <option>Marsala</option>
+            <option>Pila</option>
+            <option>Robbio</option>
+            <option>Vercelli</option>
+            <option>Novara</option>
+            <option>Altro</option>
+          </select>
+          <textarea name="message" placeholder="Date, numero ospiti, esigenze..." required></textarea>
+          <button type="submit">Invia richiesta alloggio</button>
+          <div id="stayMessage">✅ Richiesta inviata. Ti risponderemo a breve.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTA STRIP -->
+  <div class="ota-strip">
+    <div class="ota-label">Collaboriamo con strutture presenti anche sui principali portali internazionali:</div>
+    <div class="ota-icons">
+      <i class="fa-brands fa-book-open-reader"></i> <!-- stilizzato per Booking -->
+      <i class="fa-brands fa-airbnb airbnb"></i>
+      <i class="fa-solid fa-location-dot trip"></i> <!-- per TripAdvisor style -->
+      <i class="fa-solid fa-globe expedia"></i> <!-- per Expedia style -->
+    </div>
+    <div style="font-size:.72rem; color:#999;">
+      I loghi sono indicativi. La gestione avviene sempre con incarico diretto del proprietario.
+    </div>
+  </div>
+
   <!-- CONTATTI FINALI -->
-  <section class="contact-final">
+  <section class="contact-final" id="contatti">
     <div>
       <h2>Parliamone direttamente</h2>
-      <p>Preferisci un contatto umano prima di affidare casa tua? Giustissimo.</p>
+      <p>Preferisci chiarire voce a voce prima di affidare il tuo immobile o prenotare un soggiorno?</p>
       <div class="contact-list">
         <p><i class="fa-solid fa-location-dot"></i>MN Property Management — Via Crosa 65, 28065 Cerano (NO)</p>
         <p><i class="fa-solid fa-phone"></i><a href="tel:+393401424232">+39 340 142 4232</a></p>
@@ -615,20 +875,19 @@
         <a href="https://www.tiktok.com/@michaelnatalizii" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
       <p style="margin-top:8px; font-size:.78rem; color:#555;">
-        Dietro MN Property Management ci sono io, <strong>Michael Natalizii</strong>: mi occupo personalmente della selezione degli immobili e del rapporto con i proprietari.
+        Dietro MN Property Management ci sono io, <strong>Michael Natalizii</strong>:
+        seguo personalmente selezione delle strutture, ospiti e proprietari.
       </p>
     </div>
 
-    <!-- Secondo form rapido -->
     <div class="contact-form-small">
-      <h3>Richiesta veloce</h3>
+      <h3>Scrivimi in un attimo</h3>
       <form id="quickForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="3cbd154b-f82b-4cf6-8514-53ed4d402643">
-        <input type="hidden" name="from_page" value="Form rapido footer">
-
-        <input type="text" name="name" placeholder="Nome e cognome" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Scrivi dove si trova l'immobile e ti ricontatto." required></textarea>
+        <input type="hidden" name="from_page" value="Form rapido contatti - Home">
+        <input type="text" name="name" placeholder="Nome e cognome*" required>
+        <input type="email" name="email" placeholder="Email*" required>
+        <textarea name="message" placeholder="Scrivi la tua richiesta..." required></textarea>
         <button type="submit">Invia</button>
         <div id="formMessageBottom">✅ Messaggio inviato.</div>
       </form>
@@ -638,8 +897,13 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2025 MN Property Management | P.IVA 02685790038</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/michael_287_/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@michaelnatalizii" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
     <p class="note">
-      MN Property Management non è un’agenzia immobiliare, ma un servizio di property management per affitti brevi e locazioni turistiche su incarico diretto dei proprietari.
+      MN Property Management non è un’agenzia immobiliare, ma un servizio di property management per affitti brevi e locazioni turistiche
+      su incarico diretto dei proprietari.
       <br>
       <a href="privacy.html" target="_blank">Privacy & Cookie Policy</a> ·
       <a href="termini.html" target="_blank">Termini d’Uso</a>
@@ -648,58 +912,72 @@
 
   <!-- SCRIPT -->
   <script>
-    // Slider hero
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    setInterval(() => {
-      if (!slides.length) return;
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 4500);
-
-    // Mobile nav (se in futuro aggiungi burger)
-    const burger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('nav-mobile');
-    if (burger && mobileNav) {
-      burger.addEventListener('click', () => {
-        mobileNav.classList.toggle('show');
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    if (hamburger && navMobile) {
+      hamburger.addEventListener('click', () => {
+        navMobile.classList.toggle('show');
       });
     }
 
-    // Form principale
+    // Hero slider (semplice fade)
+    const slides = document.querySelectorAll('.hero .slide');
+    let current = 0;
+    if (slides.length) {
+      slides[0].classList.add('active');
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 4500);
+    }
+
+    // Form proprietari (top)
     const mainForm = document.getElementById('mainRequestForm');
     const msgTop = document.getElementById('formMessageTop');
     if (mainForm) {
       mainForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
-          const res = await fetch(mainForm.action, { method: 'POST', body: new FormData(mainForm) });
+          const res = await fetch(mainForm.action, { method:'POST', body:new FormData(mainForm) });
           if (res.ok) {
             msgTop.style.display = 'block';
             mainForm.reset();
           }
-        } catch (err) {
-          console.error(err);
-        }
+        } catch(err){ console.error(err); }
       });
     }
 
-    // Form rapido
+    // Form soggiorno
+    const stayForm = document.getElementById('stayForm');
+    const stayMsg = document.getElementById('stayMessage');
+    if (stayForm) {
+      stayForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+          const res = await fetch(stayForm.action, { method:'POST', body:new FormData(stayForm) });
+          if (res.ok) {
+            stayMsg.style.display = 'block';
+            stayForm.reset();
+          }
+        } catch(err){ console.error(err); }
+      });
+    }
+
+    // Form rapido footer
     const quickForm = document.getElementById('quickForm');
     const msgBottom = document.getElementById('formMessageBottom');
     if (quickForm) {
       quickForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
-          const res = await fetch(quickForm.action, { method: 'POST', body: new FormData(quickForm) });
+          const res = await fetch(quickForm.action, { method:'POST', body:new FormData(quickForm) });
           if (res.ok) {
             msgBottom.style.display = 'block';
             quickForm.reset();
           }
-        } catch (err) {
-          console.error(err);
-        }
+        } catch(err){ console.error(err); }
       });
     }
   </script>
